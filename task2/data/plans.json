@@ -1,0 +1,264 @@
+{
+  "unit": "模拟单位",
+  "sets": {
+    "reference": {
+      "fail_tools": [],
+      "plans": [
+        {
+          "id": "initial",
+          "name": "初始方案",
+          "role": "initial",
+          "materials": [
+            {"id": "m-full", "title": "完整主视觉与三套海报", "cost": 7}
+          ],
+          "script": {
+            "title": "完整上新脚本",
+            "summary": "用三套海报介绍春季新品的卖点、价格和上市时间。",
+            "cost": 5
+          },
+          "estimate": 12,
+          "duration_hours": 16
+        },
+        {
+          "id": "alternative",
+          "name": "替代方案",
+          "role": "alternative",
+          "materials": [
+            {"id": "m-lite", "title": "单张主视觉", "cost": 4}
+          ],
+          "script": {
+            "title": "精简上新脚本",
+            "summary": "用单张主视觉说明春季新品的卖点和上市时间。",
+            "cost": 4
+          },
+          "estimate": 8,
+          "duration_hours": 8
+        }
+      ]
+    },
+    "no_feasible": {
+      "fail_tools": [],
+      "plans": [
+        {
+          "id": "initial",
+          "name": "初始方案",
+          "role": "initial",
+          "materials": [
+            {"id": "m-full", "title": "完整主视觉与三套海报", "cost": 7}
+          ],
+          "script": {
+            "title": "完整上新脚本",
+            "summary": "用三套海报介绍春季新品的卖点、价格和上市时间。",
+            "cost": 5
+          },
+          "estimate": 12,
+          "duration_hours": 16
+        },
+        {
+          "id": "alternative",
+          "name": "替代方案",
+          "role": "alternative",
+          "materials": [
+            {"id": "m-long", "title": "加长视频素材", "cost": 9}
+          ],
+          "script": {
+            "title": "加长讲解脚本",
+            "summary": "用加长视频逐项介绍春季新品。",
+            "cost": 6
+          },
+          "estimate": 15,
+          "duration_hours": 12
+        }
+      ]
+    },
+    "normal": {
+      "fail_tools": [],
+      "plans": [
+        {
+          "id": "standard",
+          "name": "门店打卡方案",
+          "role": "initial",
+          "materials": [
+            {"id": "m-store", "title": "门店打卡海报", "cost": 5}
+          ],
+          "script": {
+            "title": "周末打卡脚本",
+            "summary": "邀请顾客周末到店打卡，并说明活动时间。",
+            "cost": 3
+          },
+          "estimate": 8,
+          "duration_hours": 6
+        }
+      ]
+    },
+    "insufficient_materials": {
+      "fail_tools": [],
+      "plans": []
+    },
+    "tool_failure": {
+      "fail_tools": ["script_generate"],
+      "plans": [
+        {
+          "id": "initial",
+          "name": "初始方案",
+          "role": "initial",
+          "materials": [
+            {"id": "m-lite", "title": "单张主视觉", "cost": 5}
+          ],
+          "script": {
+            "title": "精简上新脚本",
+            "summary": "用单张主视觉说明春季新品的卖点。",
+            "cost": 3
+          },
+          "estimate": 8,
+          "duration_hours": 8
+        }
+      ]
+    },
+    "partial": {
+      "fail_tools": [],
+      "plans": [
+        {
+          "id": "initial",
+          "name": "初始方案",
+          "role": "initial",
+          "materials": [
+            {"id": "m-full", "title": "完整主视觉", "cost": 7, "available": true},
+            {"id": "m-detail", "title": "详情页", "cost": 3, "available": false}
+          ],
+          "script": {
+            "title": "完整上新脚本",
+            "summary": "需要主视觉和详情页才能讲完卖点。",
+            "cost": 5
+          },
+          "estimate": 15,
+          "duration_hours": 16
+        },
+        {
+          "id": "alternative",
+          "name": "替代方案",
+          "role": "alternative",
+          "materials": [
+            {"id": "m-lite", "title": "单张主视觉", "cost": 4, "available": true}
+          ],
+          "script": {
+            "title": "精简上新脚本",
+            "summary": "只用已经检索到的单张主视觉说明卖点。",
+            "cost": 4
+          },
+          "estimate": 8,
+          "duration_hours": 8
+        }
+      ]
+    },
+    "resume_once": {
+      "fail_tools": [],
+      "fail_once": ["script_generate"],
+      "plans": [
+        {
+          "id": "initial",
+          "name": "续跑方案",
+          "role": "initial",
+          "materials": [
+            {"id": "m-resume", "title": "活动海报", "cost": 5}
+          ],
+          "script": {
+            "title": "续跑脚本",
+            "summary": "第一次生成失败，第二次沿用已检索海报并完成脚本。",
+            "cost": 3
+          },
+          "estimate": 8,
+          "duration_hours": 6
+        }
+      ]
+    },
+    "replan_script": {
+      "fail_tools": [],
+      "fail_plan_tools": {
+        "initial": ["script_generate"]
+      },
+      "plans": [
+        {
+          "id": "initial",
+          "name": "初始方案",
+          "role": "initial",
+          "materials": [
+            {"id": "m-full", "title": "完整主视觉与三套海报", "cost": 7}
+          ],
+          "script": {
+            "title": "完整上新脚本",
+            "summary": "用三套海报介绍春季新品的卖点、价格和上市时间。",
+            "cost": 5
+          },
+          "estimate": 12,
+          "duration_hours": 16
+        },
+        {
+          "id": "alternative",
+          "name": "替代方案",
+          "role": "alternative",
+          "materials": [
+            {"id": "m-lite", "title": "单张主视觉", "cost": 4}
+          ],
+          "script": {
+            "title": "精简上新脚本",
+            "summary": "用单张主视觉说明春季新品的卖点和上市时间。",
+            "cost": 4
+          },
+          "estimate": 8,
+          "duration_hours": 8
+        }
+      ]
+    },
+    "choose_feasible": {
+      "fail_tools": [],
+      "plans": [
+        {
+          "id": "initial",
+          "name": "初始方案",
+          "role": "initial",
+          "materials": [
+            {"id": "m-full", "title": "完整主视觉与三套海报", "cost": 7}
+          ],
+          "script": {
+            "title": "完整上新脚本",
+            "summary": "用三套海报介绍春季新品。",
+            "cost": 5
+          },
+          "estimate": 12,
+          "duration_hours": 16
+        },
+        {
+          "id": "pricey",
+          "name": "高成本方案",
+          "role": "alternative",
+          "materials": [
+            {"id": "m-long", "title": "加长视频素材", "cost": 9}
+          ],
+          "script": {
+            "title": "加长讲解脚本",
+            "summary": "用加长视频介绍春季新品。",
+            "cost": 6
+          },
+          "estimate": 15,
+          "duration_hours": 12
+        },
+        {
+          "id": "lean",
+          "name": "低成本方案",
+          "role": "alternative",
+          "materials": [
+            {"id": "m-short", "title": "一句话海报", "cost": 3}
+          ],
+          "script": {
+            "title": "短脚本",
+            "summary": "用一句话海报说明春季新品。",
+            "cost": 3
+          },
+          "estimate": 6,
+          "duration_hours": 4
+        }
+      ]
+    }
+  }
+}

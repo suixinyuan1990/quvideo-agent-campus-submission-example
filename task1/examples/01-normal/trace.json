@@ -1,0 +1,150 @@
+{
+  "run_status": "completed",
+  "outcome": "scheduled_draft",
+  "material_id": "M10",
+  "max_steps": 8,
+  "max_tool_calls": 8,
+  "decision_count": 5,
+  "tool_calls_used": 4,
+  "hit_limit": false,
+  "incomplete_reason": null,
+  "stopped": null,
+  "final_decision": {
+    "action": "finish",
+    "arguments": null,
+    "decision_basis": "草稿已保存。结束。"
+  },
+  "steps": [
+    {
+      "step": 1,
+      "tool": "read_material",
+      "arguments": {
+        "material_id": "M10",
+        "refresh": false
+      },
+      "decision_basis": "还没有素材观察结果，先读取素材元数据和发布时间要求。",
+      "result_summary": "素材齐全，发布时间 10:00（2026-11-14），硬性要求=是",
+      "result": {
+        "ok": true,
+        "summary": "素材齐全，发布时间 10:00（2026-11-14），硬性要求=是",
+        "material": {
+          "id": "M10",
+          "title": "门店周末营业提醒",
+          "body": "本周六日照常营业，欢迎到店了解养护服务。",
+          "channel": "wechat",
+          "audience": "followers",
+          "requested_slot": "10:00",
+          "date": "2026-11-14",
+          "hard_requirement": true,
+          "content_revision": "r1",
+          "queue_status": "pending"
+        },
+        "missing_fields": [],
+        "complete": true,
+        "refreshed": false
+      },
+      "next_action": "check_rules",
+      "next_arguments": {
+        "material_id": "M10"
+      },
+      "next_decision_basis": "素材字段已经齐全，下一步检查审核规则。"
+    },
+    {
+      "step": 2,
+      "tool": "check_rules",
+      "arguments": {
+        "material_id": "M10"
+      },
+      "decision_basis": "素材字段已经齐全，下一步检查审核规则。",
+      "result_summary": "规则检查通过，无风险",
+      "result": {
+        "ok": true,
+        "summary": "规则检查通过，无风险",
+        "material_id": "M10",
+        "risks": [],
+        "blocking": false
+      },
+      "next_action": "query_slots",
+      "next_arguments": {
+        "date": "2026-11-14",
+        "slot": "10:00",
+        "material_id": "M10"
+      },
+      "next_decision_basis": "规则检查通过，查询要求的发布时间是否可用。"
+    },
+    {
+      "step": 3,
+      "tool": "query_slots",
+      "arguments": {
+        "date": "2026-11-14",
+        "slot": "10:00",
+        "material_id": "M10"
+      },
+      "decision_basis": "规则检查通过，查询要求的发布时间是否可用。",
+      "result_summary": "10:00 可用",
+      "result": {
+        "ok": true,
+        "summary": "10:00 可用",
+        "date": "2026-11-14",
+        "slot": "10:00",
+        "known": true,
+        "preferred_free": true,
+        "occupied_by": null,
+        "alternative": null,
+        "free_slots": [
+          "10:00"
+        ],
+        "occupied_slots": []
+      },
+      "next_action": "save_draft",
+      "next_arguments": {
+        "material_id": "M10",
+        "suggested_slot": "10:00",
+        "commit": true,
+        "confirmed_slot": null
+      },
+      "next_decision_basis": "要求的时段可用，按该时段保存草稿。"
+    },
+    {
+      "step": 4,
+      "tool": "save_draft",
+      "arguments": {
+        "material_id": "M10",
+        "suggested_slot": "10:00",
+        "commit": true,
+        "confirmed_slot": null
+      },
+      "decision_basis": "要求的时段可用，按该时段保存草稿。",
+      "result_summary": "已新建草稿 D-2edafde011af，未发布",
+      "result": {
+        "ok": true,
+        "created": true,
+        "duplicate": false,
+        "summary": "已新建草稿 D-2edafde011af，未发布",
+        "draft_id": "D-2edafde011af",
+        "draft": {
+          "draft_id": "D-2edafde011af",
+          "material_id": "M10",
+          "content_revision": "r1",
+          "date": "2026-11-14",
+          "requested_slot": "10:00",
+          "suggested_slot": "10:00",
+          "committed_slot": "10:00",
+          "hard_requirement": true,
+          "hard_requirement_changed": false,
+          "change_authorized": false,
+          "confirmation_status": "not_required",
+          "review_status": "ready_draft",
+          "risk_reasons": [],
+          "publish_state": "not_published"
+        },
+        "publish_state": "not_published",
+        "confirmation_status": "not_required",
+        "store_draft_count": 1
+      },
+      "next_action": "finish",
+      "next_arguments": null,
+      "next_decision_basis": "草稿已保存。结束。"
+    }
+  ]
+}

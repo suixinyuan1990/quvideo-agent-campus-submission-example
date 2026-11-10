@@ -1,0 +1,9 @@
+{
+  "case_id": "over_budget_switch",
+  "note": "预算 10 个模拟单位。初始方案估算 12，替代方案估算 8。观察到超预算后改选 8 的方案，再估算并保存。",
+  "theme": "春季新品上新",
+  "budget": 10,
+  "deadline": "2026-11-20",
+  "as_of": "2026-11-10T09:00:00",
+  "plan_set": "reference"
+}

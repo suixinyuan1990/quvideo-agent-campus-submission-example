@@ -1,0 +1,193 @@
+{
+  "case_id": "normal",
+  "note": "初始方案估算 8，不超过预算 10，估算后直接保存。",
+  "theme": "周末门店打卡",
+  "budget": 10,
+  "deadline": "2026-11-20",
+  "unit": "模拟单位",
+  "completed": true,
+  "reused": false,
+  "task_plan": [
+    {
+      "id": "s1",
+      "tool": "material_search",
+      "title": "素材检索",
+      "plan_id": null
+    },
+    {
+      "id": "s2",
+      "tool": "script_generate",
+      "title": "生成门店打卡方案脚本",
+      "plan_id": "standard"
+    },
+    {
+      "id": "s3",
+      "tool": "cost_estimate",
+      "title": "估算门店打卡方案",
+      "plan_id": "standard"
+    },
+    {
+      "id": "s4",
+      "tool": "plan_save",
+      "title": "保存门店打卡方案",
+      "plan_id": "standard"
+    }
+  ],
+  "step_status": [
+    {
+      "id": "s1",
+      "tool": "material_search",
+      "title": "素材检索",
+      "plan_id": null,
+      "status": "success",
+      "reason": null,
+      "prior_status": null,
+      "executed_this_run": true
+    },
+    {
+      "id": "s2",
+      "tool": "script_generate",
+      "title": "生成门店打卡方案脚本",
+      "plan_id": "standard",
+      "status": "success",
+      "reason": null,
+      "prior_status": null,
+      "executed_this_run": true
+    },
+    {
+      "id": "s3",
+      "tool": "cost_estimate",
+      "title": "估算门店打卡方案",
+      "plan_id": "standard",
+      "status": "success",
+      "reason": null,
+      "prior_status": null,
+      "executed_this_run": true
+    },
+    {
+      "id": "s4",
+      "tool": "plan_save",
+      "title": "保存门店打卡方案",
+      "plan_id": "standard",
+      "status": "success",
+      "reason": null,
+      "prior_status": null,
+      "executed_this_run": true
+    }
+  ],
+  "tool_results": [
+    {
+      "id": "s1",
+      "tool": "material_search",
+      "plan_id": null,
+      "status": "success",
+      "result": {
+        "ok": true,
+        "count": 1,
+        "materials": [
+          {
+            "id": "m-store",
+            "title": "门店打卡海报",
+            "cost": 5
+          }
+        ]
+      },
+      "retained_result": null,
+      "source": null
+    },
+    {
+      "id": "s2",
+      "tool": "script_generate",
+      "plan_id": "standard",
+      "status": "success",
+      "result": {
+        "ok": true,
+        "plan_id": "standard",
+        "script": {
+          "title": "周末打卡脚本",
+          "summary": "邀请顾客周末到店打卡，并说明活动时间。",
+          "cost": 3
+        }
+      },
+      "retained_result": null,
+      "source": null
+    },
+    {
+      "id": "s3",
+      "tool": "cost_estimate",
+      "plan_id": "standard",
+      "status": "success",
+      "result": {
+        "ok": true,
+        "plan_id": "standard",
+        "name": "门店打卡方案",
+        "material_cost": 5,
+        "script_cost": 3,
+        "estimate": 8,
+        "budget": 10,
+        "within_budget": true,
+        "over_by": 0,
+        "duration_hours": 6,
+        "available_hours": 254,
+        "within_deadline": true,
+        "unit": "模拟单位"
+      },
+      "retained_result": null,
+      "source": null
+    },
+    {
+      "id": "s4",
+      "tool": "plan_save",
+      "plan_id": "standard",
+      "status": "success",
+      "result": {
+        "ok": true,
+        "saved": true,
+        "plan_id": "standard",
+        "estimate": 8
+      },
+      "retained_result": null,
+      "source": null
+    }
+  ],
+  "decisions": [
+    {
+      "seq": 5,
+      "type": "decision",
+      "action": "save",
+      "rule": "R7",
+      "reason": "门店打卡方案估算 8，未超过预算 10，保存该方案。",
+      "plan_id": "standard",
+      "observed_estimate": 8,
+      "budget": 10
+    }
+  ],
+  "total_cost": 8,
+  "incremental_cost": 8,
+  "saved_plan": {
+    "plan_id": "standard",
+    "name": "门店打卡方案",
+    "theme": "周末门店打卡",
+    "materials": [
+      {
+        "id": "m-store",
+        "title": "门店打卡海报",
+        "cost": 5
+      }
+    ],
+    "script": {
+      "title": "周末打卡脚本",
+      "summary": "邀请顾客周末到店打卡，并说明活动时间。",
+      "cost": 3
+    },
+    "estimate": 8,
+    "duration_hours": 6,
+    "budget": 10,
+    "deadline": "2026-11-20",
+    "unit": "模拟单位",
+    "rejected_plans": []
+  },
+  "incomplete_reason": null,
+  "gap": null,
+  "failed_steps_marked_success": false
+}

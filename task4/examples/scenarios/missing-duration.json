@@ -1,0 +1,30 @@
+{
+  "input": {
+    "theme": "介绍支持字幕",
+    "duration_sec": null,
+    "audience": "功能介绍观众",
+    "platform": "抖音",
+    "style": "口播"
+  },
+  "result": {
+    "title": "",
+    "shots": [],
+    "estimated_duration_sec": null,
+    "source_ids": [],
+    "risks": [],
+    "status": "needs_input",
+    "message": "缺少关键信息：目标时长"
+  },
+  "trace": [
+    {
+      "action": "ask",
+      "arguments": {
+        "missing": [
+          "目标时长"
+        ]
+      },
+      "ok": true,
+      "observation": {}
+    }
+  ]
+}

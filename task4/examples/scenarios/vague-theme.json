@@ -1,0 +1,30 @@
+{
+  "input": {
+    "theme": "做一个视频",
+    "duration_sec": 30.0,
+    "audience": "功能介绍观众",
+    "platform": "抖音",
+    "style": "口播"
+  },
+  "result": {
+    "title": "",
+    "shots": [],
+    "estimated_duration_sec": null,
+    "source_ids": [],
+    "risks": [],
+    "status": "needs_input",
+    "message": "主题无法形成检索查询，请补充具体的产品或功能。"
+  },
+  "trace": [
+    {
+      "action": "ask",
+      "arguments": {
+        "missing": [
+          "主题"
+        ]
+      },
+      "ok": true,
+      "observation": {}
+    }
+  ]
+}

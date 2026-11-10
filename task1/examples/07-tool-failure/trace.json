@@ -1,0 +1,99 @@
+{
+  "run_status": "completed",
+  "outcome": "tool_failure",
+  "material_id": "M11",
+  "max_steps": 8,
+  "max_tool_calls": 8,
+  "decision_count": 4,
+  "tool_calls_used": 3,
+  "hit_limit": false,
+  "incomplete_reason": null,
+  "stopped": null,
+  "final_decision": {
+    "action": "finish",
+    "arguments": null,
+    "decision_basis": "规则检查仍然没有可靠结果，阻断排期。"
+  },
+  "steps": [
+    {
+      "step": 1,
+      "tool": "read_material",
+      "arguments": {
+        "material_id": "M11",
+        "refresh": false
+      },
+      "decision_basis": "还没有素材观察结果，先读取素材元数据和发布时间要求。",
+      "result_summary": "素材齐全，发布时间 11:00（2026-11-16），硬性要求=是",
+      "result": {
+        "ok": true,
+        "summary": "素材齐全，发布时间 11:00（2026-11-16），硬性要求=是",
+        "material": {
+          "id": "M11",
+          "title": "工位绿植养护提示",
+          "body": "周三下午集中浇水，请勿把杯子放在花盆边缘。",
+          "channel": "email",
+          "audience": "staff",
+          "requested_slot": "11:00",
+          "date": "2026-11-16",
+          "hard_requirement": true,
+          "content_revision": "r1",
+          "queue_status": "pending"
+        },
+        "missing_fields": [],
+        "complete": true,
+        "refreshed": false
+      },
+      "next_action": "check_rules",
+      "next_arguments": {
+        "material_id": "M11"
+      },
+      "next_decision_basis": "素材字段已经齐全，下一步检查审核规则。"
+    },
+    {
+      "step": 2,
+      "tool": "check_rules",
+      "arguments": {
+        "material_id": "M11"
+      },
+      "decision_basis": "素材字段已经齐全，下一步检查审核规则。",
+      "result_summary": "规则服务超时",
+      "result": {
+        "ok": false,
+        "error": "rule_service_timeout",
+        "retryable": true,
+        "summary": "规则服务超时",
+        "created": false,
+        "duplicate": false,
+        "risks": null,
+        "blocking": null
+      },
+      "next_action": "check_rules",
+      "next_arguments": {
+        "material_id": "M11"
+      },
+      "next_decision_basis": "规则工具临时失败，决定补查一次；没有可靠规则结果之前不排期。"
+    },
+    {
+      "step": 3,
+      "tool": "check_rules",
+      "arguments": {
+        "material_id": "M11"
+      },
+      "decision_basis": "规则工具临时失败，决定补查一次；没有可靠规则结果之前不排期。",
+      "result_summary": "规则服务超时",
+      "result": {
+        "ok": false,
+        "error": "rule_service_timeout",
+        "retryable": true,
+        "summary": "规则服务超时",
+        "created": false,
+        "duplicate": false,
+        "risks": null,
+        "blocking": null
+      },
+      "next_action": "finish",
+      "next_arguments": null,
+      "next_decision_basis": "规则检查仍然没有可靠结果，阻断排期。"
+    }
+  ]
+}

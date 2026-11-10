@@ -1,0 +1,132 @@
+{
+  "run_status": "completed",
+  "outcome": "save_failed",
+  "material_id": "M04",
+  "max_steps": 8,
+  "max_tool_calls": 8,
+  "decision_count": 5,
+  "tool_calls_used": 4,
+  "hit_limit": false,
+  "incomplete_reason": null,
+  "stopped": null,
+  "final_decision": {
+    "action": "finish",
+    "arguments": null,
+    "decision_basis": "保存工具返回失败。结束并报告失败。"
+  },
+  "steps": [
+    {
+      "step": 1,
+      "tool": "read_material",
+      "arguments": {
+        "material_id": "M04",
+        "refresh": false
+      },
+      "decision_basis": "还没有素材观察结果，先读取素材元数据和发布时间要求。",
+      "result_summary": "素材齐全，发布时间 15:00（2026-11-15），硬性要求=是",
+      "result": {
+        "ok": true,
+        "summary": "素材齐全，发布时间 15:00（2026-11-15），硬性要求=是",
+        "material": {
+          "id": "M04",
+          "title": "新品试穿预约",
+          "body": "新款已到店，可在周末预约试穿。",
+          "channel": "app_push",
+          "audience": "members",
+          "requested_slot": "15:00",
+          "date": "2026-11-15",
+          "hard_requirement": true,
+          "content_revision": "r2",
+          "queue_status": "pending"
+        },
+        "missing_fields": [],
+        "complete": true,
+        "refreshed": false
+      },
+      "next_action": "check_rules",
+      "next_arguments": {
+        "material_id": "M04"
+      },
+      "next_decision_basis": "素材字段已经齐全，下一步检查审核规则。"
+    },
+    {
+      "step": 2,
+      "tool": "check_rules",
+      "arguments": {
+        "material_id": "M04"
+      },
+      "decision_basis": "素材字段已经齐全，下一步检查审核规则。",
+      "result_summary": "规则检查通过，无风险",
+      "result": {
+        "ok": true,
+        "summary": "规则检查通过，无风险",
+        "material_id": "M04",
+        "risks": [],
+        "blocking": false
+      },
+      "next_action": "query_slots",
+      "next_arguments": {
+        "date": "2026-11-15",
+        "slot": "15:00",
+        "material_id": "M04"
+      },
+      "next_decision_basis": "规则检查通过，查询要求的发布时间是否可用。"
+    },
+    {
+      "step": 3,
+      "tool": "query_slots",
+      "arguments": {
+        "date": "2026-11-15",
+        "slot": "15:00",
+        "material_id": "M04"
+      },
+      "decision_basis": "规则检查通过，查询要求的发布时间是否可用。",
+      "result_summary": "15:00 可用",
+      "result": {
+        "ok": true,
+        "summary": "15:00 可用",
+        "date": "2026-11-15",
+        "slot": "15:00",
+        "known": true,
+        "preferred_free": true,
+        "occupied_by": null,
+        "alternative": null,
+        "free_slots": [
+          "15:00"
+        ],
+        "occupied_slots": []
+      },
+      "next_action": "save_draft",
+      "next_arguments": {
+        "material_id": "M04",
+        "suggested_slot": "15:00",
+        "commit": true,
+        "confirmed_slot": null
+      },
+      "next_decision_basis": "要求的时段可用，按该时段保存草稿。"
+    },
+    {
+      "step": 4,
+      "tool": "save_draft",
+      "arguments": {
+        "material_id": "M04",
+        "suggested_slot": "15:00",
+        "commit": true,
+        "confirmed_slot": null
+      },
+      "decision_basis": "要求的时段可用，按该时段保存草稿。",
+      "result_summary": "草稿存储不可用",
+      "result": {
+        "ok": false,
+        "error": "storage_unavailable",
+        "retryable": false,
+        "summary": "草稿存储不可用",
+        "created": false,
+        "duplicate": false
+      },
+      "next_action": "finish",
+      "next_arguments": null,
+      "next_decision_basis": "保存工具返回失败。结束并报告失败。"
+    }
+  ]
+}

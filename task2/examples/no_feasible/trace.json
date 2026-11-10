@@ -1,0 +1,204 @@
+{
+  "case_id": "no_feasible",
+  "decision_source": "local_policy",
+  "events": [
+    {
+      "seq": 1,
+      "type": "plan_init",
+      "decision_source": "local_policy",
+      "budget": 10,
+      "deadline": "2026-11-20",
+      "available_hours": 254,
+      "plan_ids": [
+        "initial",
+        "alternative"
+      ]
+    },
+    {
+      "seq": 2,
+      "type": "tool",
+      "tool": "material_search",
+      "title": "素材检索",
+      "status": "success",
+      "plan_id": null,
+      "request": {
+        "theme": "春季新品上新"
+      },
+      "result": {
+        "ok": true,
+        "count": 2,
+        "materials": [
+          {
+            "id": "m-full",
+            "title": "完整主视觉与三套海报",
+            "cost": 7
+          },
+          {
+            "id": "m-long",
+            "title": "加长视频素材",
+            "cost": 9
+          }
+        ]
+      },
+      "reason": null
+    },
+    {
+      "seq": 3,
+      "type": "tool",
+      "tool": "script_generate",
+      "title": "生成初始方案脚本",
+      "status": "success",
+      "plan_id": "initial",
+      "request": {
+        "plan_id": "initial",
+        "theme": "春季新品上新",
+        "material_ids": [
+          "m-full"
+        ],
+        "source": "material_search"
+      },
+      "result": {
+        "ok": true,
+        "plan_id": "initial",
+        "script": {
+          "title": "完整上新脚本",
+          "summary": "用三套海报介绍春季新品的卖点、价格和上市时间。",
+          "cost": 5
+        }
+      },
+      "reason": null
+    },
+    {
+      "seq": 4,
+      "type": "tool",
+      "tool": "cost_estimate",
+      "title": "估算初始方案",
+      "status": "success",
+      "plan_id": "initial",
+      "request": {
+        "plan_id": "initial"
+      },
+      "result": {
+        "ok": true,
+        "plan_id": "initial",
+        "name": "初始方案",
+        "material_cost": 7,
+        "script_cost": 5,
+        "estimate": 12,
+        "budget": 10,
+        "within_budget": false,
+        "over_by": 2,
+        "duration_hours": 16,
+        "available_hours": 254,
+        "within_deadline": true,
+        "unit": "模拟单位"
+      },
+      "reason": null
+    },
+    {
+      "seq": 5,
+      "type": "decision",
+      "action": "switch",
+      "rule": "R1",
+      "reason": "初始方案估算 12，预算 10，超出 2。改选替代方案，准备再次估算。",
+      "from_plan": "initial",
+      "to_plan": "alternative",
+      "observed_estimate": 12,
+      "budget": 10,
+      "reason_code": "budget"
+    },
+    {
+      "seq": 6,
+      "type": "tool",
+      "tool": "script_generate",
+      "title": "生成替代方案脚本",
+      "status": "success",
+      "plan_id": "alternative",
+      "request": {
+        "plan_id": "alternative",
+        "theme": "春季新品上新",
+        "material_ids": [
+          "m-long"
+        ],
+        "source": "material_search"
+      },
+      "result": {
+        "ok": true,
+        "plan_id": "alternative",
+        "script": {
+          "title": "加长讲解脚本",
+          "summary": "用加长视频逐项介绍春季新品。",
+          "cost": 6
+        }
+      },
+      "reason": null
+    },
+    {
+      "seq": 7,
+      "type": "tool",
+      "tool": "cost_estimate",
+      "title": "估算替代方案",
+      "status": "success",
+      "plan_id": "alternative",
+      "request": {
+        "plan_id": "alternative"
+      },
+      "result": {
+        "ok": true,
+        "plan_id": "alternative",
+        "name": "替代方案",
+        "material_cost": 9,
+        "script_cost": 6,
+        "estimate": 15,
+        "budget": 10,
+        "within_budget": false,
+        "over_by": 5,
+        "duration_hours": 12,
+        "available_hours": 254,
+        "within_deadline": true,
+        "unit": "模拟单位"
+      },
+      "reason": null
+    },
+    {
+      "seq": 8,
+      "type": "decision",
+      "action": "stop",
+      "rule": "R2",
+      "reason": "没有可行方案。最低估算 12 个模拟单位，预算 10，缺口 2。",
+      "gap": {
+        "unit": "模拟单位",
+        "budget": 10,
+        "lowest_estimate": 12,
+        "shortfall": 2,
+        "rejected": [
+          {
+            "plan_id": "initial",
+            "name": "初始方案",
+            "estimate": 12,
+            "over_by": 2,
+            "within_deadline": true
+          },
+          {
+            "plan_id": "alternative",
+            "name": "替代方案",
+            "estimate": 15,
+            "over_by": 5,
+            "within_deadline": true
+          }
+        ]
+      }
+    },
+    {
+      "seq": 9,
+      "type": "tool",
+      "tool": "plan_save",
+      "title": "方案保存",
+      "status": "not_run",
+      "plan_id": null,
+      "request": null,
+      "result": null,
+      "reason": "没有可行方案。最低估算 12 个模拟单位，预算 10，缺口 2。"
+    }
+  ]
+}

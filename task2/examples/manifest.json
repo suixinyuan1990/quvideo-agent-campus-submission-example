@@ -1,0 +1,173 @@
+{
+  "unit": "模拟单位",
+  "cases": [
+    {
+      "case_id": "normal",
+      "covers": [
+        "正常完成"
+      ],
+      "input": "examples/normal/input.json",
+      "output": "examples/normal/output.json",
+      "trace": "examples/normal/trace.json",
+      "completed": true,
+      "total_cost": 8,
+      "gap": null
+    },
+    {
+      "case_id": "over_budget_switch",
+      "covers": [
+        "预算超限",
+        "调整后完成"
+      ],
+      "input": "examples/over_budget_switch/input.json",
+      "output": "examples/over_budget_switch/output.json",
+      "trace": "examples/over_budget_switch/trace.json",
+      "completed": true,
+      "total_cost": 8,
+      "gap": null
+    },
+    {
+      "case_id": "no_feasible",
+      "covers": [
+        "预算超限",
+        "未完成及缺口"
+      ],
+      "input": "examples/no_feasible/input.json",
+      "output": "examples/no_feasible/output.json",
+      "trace": "examples/no_feasible/trace.json",
+      "completed": false,
+      "total_cost": 0,
+      "gap": {
+        "unit": "模拟单位",
+        "budget": 10,
+        "lowest_estimate": 12,
+        "shortfall": 2,
+        "rejected": [
+          {
+            "plan_id": "initial",
+            "name": "初始方案",
+            "estimate": 12,
+            "over_by": 2,
+            "within_deadline": true
+          },
+          {
+            "plan_id": "alternative",
+            "name": "替代方案",
+            "estimate": 15,
+            "over_by": 5,
+            "within_deadline": true
+          }
+        ]
+      }
+    },
+    {
+      "case_id": "missing_info",
+      "covers": [
+        "缺预算或截止时间",
+        "信息不足"
+      ],
+      "input": "examples/missing_info/input.json",
+      "output": "examples/missing_info/output.json",
+      "trace": "examples/missing_info/trace.json",
+      "completed": false,
+      "total_cost": 0,
+      "gap": {
+        "missing_fields": [
+          "预算"
+        ]
+      }
+    },
+    {
+      "case_id": "insufficient_materials",
+      "covers": [
+        "资料不足"
+      ],
+      "input": "examples/insufficient_materials/input.json",
+      "output": "examples/insufficient_materials/output.json",
+      "trace": "examples/insufficient_materials/trace.json",
+      "completed": false,
+      "total_cost": 0,
+      "gap": {
+        "missing": "materials"
+      }
+    },
+    {
+      "case_id": "tool_failure",
+      "covers": [
+        "工具失败",
+        "失败步骤不记为成功"
+      ],
+      "input": "examples/tool_failure/input.json",
+      "output": "examples/tool_failure/output.json",
+      "trace": "examples/tool_failure/trace.json",
+      "completed": false,
+      "total_cost": 0,
+      "gap": null
+    },
+    {
+      "case_id": "repeat",
+      "covers": [
+        "重复执行"
+      ],
+      "input": "examples/repeat/input.json",
+      "output": "examples/repeat/output.json",
+      "trace": "examples/repeat/trace.json",
+      "completed": true,
+      "total_cost": 8,
+      "gap": null
+    },
+    {
+      "case_id": "partial_materials",
+      "covers": [
+        "部分成功",
+        "预算内替代"
+      ],
+      "input": "examples/partial_materials/input.json",
+      "output": "examples/partial_materials/output.json",
+      "trace": "examples/partial_materials/trace.json",
+      "completed": true,
+      "total_cost": 8,
+      "gap": null
+    },
+    {
+      "case_id": "resume_failed",
+      "covers": [
+        "失败步骤续跑",
+        "失败步骤不记为成功"
+      ],
+      "input": "examples/resume_failed/input.json",
+      "output": "examples/resume_failed/output.json",
+      "trace": "examples/resume_failed/trace.json",
+      "completed": true,
+      "total_cost": 8,
+      "gap": null
+    },
+    {
+      "case_id": "replan_after_failure",
+      "covers": [
+        "工具失败",
+        "失败后重规划",
+        "保留成功结果"
+      ],
+      "input": "examples/replan_after_failure/input.json",
+      "output": "examples/replan_after_failure/output.json",
+      "trace": "examples/replan_after_failure/trace.json",
+      "completed": true,
+      "total_cost": 8,
+      "gap": null
+    },
+    {
+      "case_id": "choose_feasible",
+      "covers": [
+        "预算超限",
+        "按依赖和预算选择方案"
+      ],
+      "input": "examples/choose_feasible/input.json",
+      "output": "examples/choose_feasible/output.json",
+      "trace": "examples/choose_feasible/trace.json",
+      "completed": true,
+      "total_cost": 6,
+      "gap": null
+    }
+  ]
+}

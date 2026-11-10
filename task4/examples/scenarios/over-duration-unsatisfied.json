@@ -1,0 +1,118 @@
+{
+  "input": {
+    "theme": "介绍支持字幕",
+    "duration_sec": 4.0,
+    "audience": "功能介绍观众",
+    "platform": "抖音",
+    "style": "口播"
+  },
+  "result": {
+    "title": "支持字幕",
+    "shots": [
+      {
+        "index": 1,
+        "visual": "产品界面",
+        "narration": "支持字幕。本视频仅介绍已列出的功能，具体以产品说明为准。",
+        "subtitle": "支持字幕。本视频仅介绍已列出的功能，具体以产品说明为准。",
+        "source_ids": [
+          "P01"
+        ],
+        "duration_sec": 6.25
+      }
+    ],
+    "estimated_duration_sec": 6.25,
+    "source_ids": [
+      "P01"
+    ],
+    "risks": [],
+    "status": "unsatisfied",
+    "message": "规则 BR-DISCLAIMER 要求保留固定声明，该声明估算为 5.250 秒，目标时长为 4 秒，两者不能同时满足。最后一次估算为 6.250 秒。"
+  },
+  "trace": [
+    {
+      "action": "search",
+      "arguments": {
+        "query": "介绍支持字幕"
+      },
+      "attempt": 1,
+      "ok": true,
+      "observation": [
+        {
+          "source_id": "P01",
+          "body": "功能#支持字幕",
+          "attributes": [
+            {
+              "key": "功能",
+              "value": "支持字幕"
+            }
+          ],
+          "matched_values": [
+            "支持字幕"
+          ],
+          "score": 9.176040783498918
+        }
+      ]
+    },
+    {
+      "action": "draft",
+      "arguments": {
+        "action": "draft",
+        "title": "支持字幕",
+        "shots": [
+          {
+            "index": 1,
+            "visual": "产品界面",
+            "narration": "支持字幕。本视频仅介绍已列出的功能，具体以产品说明为准。",
+            "subtitle": "支持字幕。本视频仅介绍已列出的功能，具体以产品说明为准。",
+            "source_ids": [
+              "P01"
+            ]
+          }
+        ]
+      },
+      "ok": true,
+      "observation": {
+        "revision": 0
+      }
+    },
+    {
+      "action": "estimate",
+      "arguments": {},
+      "attempt": 1,
+      "ok": true,
+      "observation": {
+        "total_ms": 6250,
+        "total_sec": 6.25,
+        "shots": [
+          {
+            "index": 1,
+            "duration_ms": 6250,
+            "duration_sec": 6.25,
+            "spoken_chars": 25
+          }
+        ],
+        "chars_per_second": 4.0
+      }
+    },
+    {
+      "action": "check_rules",
+      "arguments": {},
+      "attempt": 1,
+      "ok": true,
+      "observation": {
+        "passed": true,
+        "violations": []
+      }
+    },
+    {
+      "action": "finish",
+      "arguments": {
+        "action": "finish",
+        "status": "unsatisfied",
+        "message": "规则 BR-DISCLAIMER 要求保留固定声明，该声明估算为 5.250 秒，目标时长为 4 秒，两者不能同时满足。最后一次估算为 6.250 秒。"
+      },
+      "ok": true,
+      "observation": {}
+    }
+  ]
+}

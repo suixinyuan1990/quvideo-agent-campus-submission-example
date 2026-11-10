@@ -1,0 +1,582 @@
+{
+  "case_id": "repeat",
+  "note": "与参考实例相同的输入连续执行两次。第二次沿用已保存方案，费用不重复累计。",
+  "runs": [
+    {
+      "case_id": "repeat",
+      "note": "与参考实例相同的输入连续执行两次。第二次沿用已保存方案，费用不重复累计。",
+      "theme": "春季新品上新",
+      "budget": 10,
+      "deadline": "2026-11-20",
+      "unit": "模拟单位",
+      "completed": true,
+      "reused": false,
+      "task_plan": [
+        {
+          "id": "s1",
+          "tool": "material_search",
+          "title": "素材检索",
+          "plan_id": null
+        },
+        {
+          "id": "s2",
+          "tool": "script_generate",
+          "title": "生成初始方案脚本",
+          "plan_id": "initial"
+        },
+        {
+          "id": "s3",
+          "tool": "cost_estimate",
+          "title": "估算初始方案",
+          "plan_id": "initial"
+        },
+        {
+          "id": "s4",
+          "tool": "script_generate",
+          "title": "生成替代方案脚本",
+          "plan_id": "alternative"
+        },
+        {
+          "id": "s5",
+          "tool": "cost_estimate",
+          "title": "估算替代方案",
+          "plan_id": "alternative"
+        },
+        {
+          "id": "s6",
+          "tool": "plan_save",
+          "title": "保存替代方案",
+          "plan_id": "alternative"
+        }
+      ],
+      "step_status": [
+        {
+          "id": "s1",
+          "tool": "material_search",
+          "title": "素材检索",
+          "plan_id": null,
+          "status": "success",
+          "reason": null,
+          "prior_status": null,
+          "executed_this_run": true
+        },
+        {
+          "id": "s2",
+          "tool": "script_generate",
+          "title": "生成初始方案脚本",
+          "plan_id": "initial",
+          "status": "success",
+          "reason": null,
+          "prior_status": null,
+          "executed_this_run": true
+        },
+        {
+          "id": "s3",
+          "tool": "cost_estimate",
+          "title": "估算初始方案",
+          "plan_id": "initial",
+          "status": "success",
+          "reason": null,
+          "prior_status": null,
+          "executed_this_run": true
+        },
+        {
+          "id": "s4",
+          "tool": "script_generate",
+          "title": "生成替代方案脚本",
+          "plan_id": "alternative",
+          "status": "success",
+          "reason": null,
+          "prior_status": null,
+          "executed_this_run": true
+        },
+        {
+          "id": "s5",
+          "tool": "cost_estimate",
+          "title": "估算替代方案",
+          "plan_id": "alternative",
+          "status": "success",
+          "reason": null,
+          "prior_status": null,
+          "executed_this_run": true
+        },
+        {
+          "id": "s6",
+          "tool": "plan_save",
+          "title": "保存替代方案",
+          "plan_id": "alternative",
+          "status": "success",
+          "reason": null,
+          "prior_status": null,
+          "executed_this_run": true
+        }
+      ],
+      "tool_results": [
+        {
+          "id": "s1",
+          "tool": "material_search",
+          "plan_id": null,
+          "status": "success",
+          "result": {
+            "ok": true,
+            "count": 2,
+            "materials": [
+              {
+                "id": "m-full",
+                "title": "完整主视觉与三套海报",
+                "cost": 7
+              },
+              {
+                "id": "m-lite",
+                "title": "单张主视觉",
+                "cost": 4
+              }
+            ]
+          },
+          "retained_result": null,
+          "source": null
+        },
+        {
+          "id": "s2",
+          "tool": "script_generate",
+          "plan_id": "initial",
+          "status": "success",
+          "result": {
+            "ok": true,
+            "plan_id": "initial",
+            "script": {
+              "title": "完整上新脚本",
+              "summary": "用三套海报介绍春季新品的卖点、价格和上市时间。",
+              "cost": 5
+            }
+          },
+          "retained_result": null,
+          "source": null
+        },
+        {
+          "id": "s3",
+          "tool": "cost_estimate",
+          "plan_id": "initial",
+          "status": "success",
+          "result": {
+            "ok": true,
+            "plan_id": "initial",
+            "name": "初始方案",
+            "material_cost": 7,
+            "script_cost": 5,
+            "estimate": 12,
+            "budget": 10,
+            "within_budget": false,
+            "over_by": 2,
+            "duration_hours": 16,
+            "available_hours": 254,
+            "within_deadline": true,
+            "unit": "模拟单位"
+          },
+          "retained_result": null,
+          "source": null
+        },
+        {
+          "id": "s4",
+          "tool": "script_generate",
+          "plan_id": "alternative",
+          "status": "success",
+          "result": {
+            "ok": true,
+            "plan_id": "alternative",
+            "script": {
+              "title": "精简上新脚本",
+              "summary": "用单张主视觉说明春季新品的卖点和上市时间。",
+              "cost": 4
+            }
+          },
+          "retained_result": null,
+          "source": null
+        },
+        {
+          "id": "s5",
+          "tool": "cost_estimate",
+          "plan_id": "alternative",
+          "status": "success",
+          "result": {
+            "ok": true,
+            "plan_id": "alternative",
+            "name": "替代方案",
+            "material_cost": 4,
+            "script_cost": 4,
+            "estimate": 8,
+            "budget": 10,
+            "within_budget": true,
+            "over_by": 0,
+            "duration_hours": 8,
+            "available_hours": 254,
+            "within_deadline": true,
+            "unit": "模拟单位"
+          },
+          "retained_result": null,
+          "source": null
+        },
+        {
+          "id": "s6",
+          "tool": "plan_save",
+          "plan_id": "alternative",
+          "status": "success",
+          "result": {
+            "ok": true,
+            "saved": true,
+            "plan_id": "alternative",
+            "estimate": 8
+          },
+          "retained_result": null,
+          "source": null
+        }
+      ],
+      "decisions": [
+        {
+          "seq": 5,
+          "type": "decision",
+          "action": "switch",
+          "rule": "R1",
+          "reason": "初始方案估算 12，预算 10，超出 2。改选替代方案，准备再次估算。",
+          "from_plan": "initial",
+          "to_plan": "alternative",
+          "observed_estimate": 12,
+          "budget": 10,
+          "reason_code": "budget"
+        },
+        {
+          "seq": 8,
+          "type": "decision",
+          "action": "save",
+          "rule": "R1",
+          "reason": "替代方案估算 8，未超过预算 10，保存该方案。",
+          "plan_id": "alternative",
+          "observed_estimate": 8,
+          "budget": 10
+        }
+      ],
+      "total_cost": 8,
+      "incremental_cost": 8,
+      "saved_plan": {
+        "plan_id": "alternative",
+        "name": "替代方案",
+        "theme": "春季新品上新",
+        "materials": [
+          {
+            "id": "m-lite",
+            "title": "单张主视觉",
+            "cost": 4
+          }
+        ],
+        "script": {
+          "title": "精简上新脚本",
+          "summary": "用单张主视觉说明春季新品的卖点和上市时间。",
+          "cost": 4
+        },
+        "estimate": 8,
+        "duration_hours": 8,
+        "budget": 10,
+        "deadline": "2026-11-20",
+        "unit": "模拟单位",
+        "rejected_plans": [
+          {
+            "plan_id": "initial",
+            "name": "初始方案",
+            "estimate": 12,
+            "over_by": 2,
+            "within_deadline": true
+          }
+        ]
+      },
+      "incomplete_reason": null,
+      "gap": null,
+      "failed_steps_marked_success": false,
+      "run": 1
+    },
+    {
+      "case_id": "repeat",
+      "note": "与参考实例相同的输入连续执行两次。第二次沿用已保存方案，费用不重复累计。",
+      "theme": "春季新品上新",
+      "budget": 10,
+      "deadline": "2026-11-20",
+      "unit": "模拟单位",
+      "completed": true,
+      "reused": true,
+      "task_plan": [
+        {
+          "id": "s1",
+          "tool": "material_search",
+          "title": "素材检索",
+          "plan_id": null
+        },
+        {
+          "id": "s2",
+          "tool": "script_generate",
+          "title": "生成初始方案脚本",
+          "plan_id": "initial"
+        },
+        {
+          "id": "s3",
+          "tool": "cost_estimate",
+          "title": "估算初始方案",
+          "plan_id": "initial"
+        },
+        {
+          "id": "s4",
+          "tool": "script_generate",
+          "title": "生成替代方案脚本",
+          "plan_id": "alternative"
+        },
+        {
+          "id": "s5",
+          "tool": "cost_estimate",
+          "title": "估算替代方案",
+          "plan_id": "alternative"
+        },
+        {
+          "id": "s6",
+          "tool": "plan_save",
+          "title": "保存替代方案",
+          "plan_id": "alternative"
+        }
+      ],
+      "step_status": [
+        {
+          "id": "s1",
+          "tool": "material_search",
+          "title": "素材检索",
+          "plan_id": null,
+          "status": "skipped",
+          "reason": "已完成，不重复执行",
+          "prior_status": "success",
+          "executed_this_run": false
+        },
+        {
+          "id": "s2",
+          "tool": "script_generate",
+          "title": "生成初始方案脚本",
+          "plan_id": "initial",
+          "status": "skipped",
+          "reason": "已完成，不重复执行",
+          "prior_status": "success",
+          "executed_this_run": false
+        },
+        {
+          "id": "s3",
+          "tool": "cost_estimate",
+          "title": "估算初始方案",
+          "plan_id": "initial",
+          "status": "skipped",
+          "reason": "已完成，不重复执行",
+          "prior_status": "success",
+          "executed_this_run": false
+        },
+        {
+          "id": "s4",
+          "tool": "script_generate",
+          "title": "生成替代方案脚本",
+          "plan_id": "alternative",
+          "status": "skipped",
+          "reason": "已完成，不重复执行",
+          "prior_status": "success",
+          "executed_this_run": false
+        },
+        {
+          "id": "s5",
+          "tool": "cost_estimate",
+          "title": "估算替代方案",
+          "plan_id": "alternative",
+          "status": "skipped",
+          "reason": "已完成，不重复执行",
+          "prior_status": "success",
+          "executed_this_run": false
+        },
+        {
+          "id": "s6",
+          "tool": "plan_save",
+          "title": "保存替代方案",
+          "plan_id": "alternative",
+          "status": "skipped",
+          "reason": "已完成，不重复执行",
+          "prior_status": "success",
+          "executed_this_run": false
+        }
+      ],
+      "tool_results": [
+        {
+          "id": "s1",
+          "tool": "material_search",
+          "plan_id": null,
+          "status": "skipped",
+          "result": null,
+          "retained_result": {
+            "ok": true,
+            "count": 2,
+            "materials": [
+              {
+                "id": "m-full",
+                "title": "完整主视觉与三套海报",
+                "cost": 7
+              },
+              {
+                "id": "m-lite",
+                "title": "单张主视觉",
+                "cost": 4
+              }
+            ]
+          },
+          "source": "previous_run"
+        },
+        {
+          "id": "s2",
+          "tool": "script_generate",
+          "plan_id": "initial",
+          "status": "skipped",
+          "result": null,
+          "retained_result": {
+            "ok": true,
+            "plan_id": "initial",
+            "script": {
+              "title": "完整上新脚本",
+              "summary": "用三套海报介绍春季新品的卖点、价格和上市时间。",
+              "cost": 5
+            }
+          },
+          "source": "previous_run"
+        },
+        {
+          "id": "s3",
+          "tool": "cost_estimate",
+          "plan_id": "initial",
+          "status": "skipped",
+          "result": null,
+          "retained_result": {
+            "ok": true,
+            "plan_id": "initial",
+            "name": "初始方案",
+            "material_cost": 7,
+            "script_cost": 5,
+            "estimate": 12,
+            "budget": 10,
+            "within_budget": false,
+            "over_by": 2,
+            "duration_hours": 16,
+            "available_hours": 254,
+            "within_deadline": true,
+            "unit": "模拟单位"
+          },
+          "source": "previous_run"
+        },
+        {
+          "id": "s4",
+          "tool": "script_generate",
+          "plan_id": "alternative",
+          "status": "skipped",
+          "result": null,
+          "retained_result": {
+            "ok": true,
+            "plan_id": "alternative",
+            "script": {
+              "title": "精简上新脚本",
+              "summary": "用单张主视觉说明春季新品的卖点和上市时间。",
+              "cost": 4
+            }
+          },
+          "source": "previous_run"
+        },
+        {
+          "id": "s5",
+          "tool": "cost_estimate",
+          "plan_id": "alternative",
+          "status": "skipped",
+          "result": null,
+          "retained_result": {
+            "ok": true,
+            "plan_id": "alternative",
+            "name": "替代方案",
+            "material_cost": 4,
+            "script_cost": 4,
+            "estimate": 8,
+            "budget": 10,
+            "within_budget": true,
+            "over_by": 0,
+            "duration_hours": 8,
+            "available_hours": 254,
+            "within_deadline": true,
+            "unit": "模拟单位"
+          },
+          "source": "previous_run"
+        },
+        {
+          "id": "s6",
+          "tool": "plan_save",
+          "plan_id": "alternative",
+          "status": "skipped",
+          "result": null,
+          "retained_result": {
+            "ok": true,
+            "saved": true,
+            "plan_id": "alternative",
+            "estimate": 8
+          },
+          "source": "previous_run"
+        }
+      ],
+      "decisions": [
+        {
+          "seq": 1,
+          "type": "decision",
+          "action": "reuse",
+          "rule": "R6",
+          "reason": "同一输入已有已保存方案，沿用该方案，跳过已完成步骤，本次不新增费用。",
+          "saved_plan_id": "alternative",
+          "retained_total_cost": 8,
+          "incremental_cost": 0
+        }
+      ],
+      "total_cost": 8,
+      "incremental_cost": 0,
+      "saved_plan": {
+        "plan_id": "alternative",
+        "name": "替代方案",
+        "theme": "春季新品上新",
+        "materials": [
+          {
+            "id": "m-lite",
+            "title": "单张主视觉",
+            "cost": 4
+          }
+        ],
+        "script": {
+          "title": "精简上新脚本",
+          "summary": "用单张主视觉说明春季新品的卖点和上市时间。",
+          "cost": 4
+        },
+        "estimate": 8,
+        "duration_hours": 8,
+        "budget": 10,
+        "deadline": "2026-11-20",
+        "unit": "模拟单位",
+        "rejected_plans": [
+          {
+            "plan_id": "initial",
+            "name": "初始方案",
+            "estimate": 12,
+            "over_by": 2,
+            "within_deadline": true
+          }
+        ]
+      },
+      "incomplete_reason": null,
+      "gap": null,
+      "failed_steps_marked_success": false,
+      "run": 2
+    }
+  ],
+  "repeat_check": {
+    "run1_total_cost": 8,
+    "run2_total_cost": 8,
+    "run2_incremental_cost": 0,
+    "double_counted": false
+  }
+}

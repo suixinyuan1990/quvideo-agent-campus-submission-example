@@ -1,0 +1,68 @@
+{
+  "input": {
+    "question": "远程协作工具怎么预约会议室？",
+    "history": []
+  },
+  "output": {
+    "answer": "现有资料不能回答该问题。",
+    "citations": [],
+    "gaps": [
+      "缺少与该问题相关的制度或产品资料。"
+    ],
+    "status": "insufficient_evidence"
+  },
+  "trace": [
+    {
+      "action": "search",
+      "arguments": {
+        "query": "远程协作工具怎么预约会议室？"
+      },
+      "output": {
+        "ok": true,
+        "tool": "search",
+        "candidates": [
+          {
+            "doc_id": "POL-MEET-001",
+            "version_date": "2025-02-01",
+            "doc_type": "faq",
+            "scope": null,
+            "priority": null,
+            "excerpt": "远程协作工具。远程协作工具的单次会议最长 90 分钟。超过时长后会议自动结束。",
+            "excerpt_complete": true,
+            "paths": [
+              "bm25",
+              "ngram"
+            ],
+            "rank": 1
+          }
+        ],
+        "path_ranks": {
+          "bm25": [
+            "POL-MEET-001"
+          ],
+          "phrase": [],
+          "ngram": [
+            "POL-MEET-001"
+          ]
+        }
+      }
+    },
+    {
+      "action": "finish",
+      "arguments": {
+        "reason": "证据已足够"
+      },
+      "output": {
+        "answer": {
+          "answer": "现有资料不能回答该问题。",
+          "citations": [],
+          "gaps": [
+            "缺少与该问题相关的制度或产品资料。"
+          ],
+          "status": "insufficient_evidence"
+        },
+        "errors": []
+      }
+    }
+  ]
+}

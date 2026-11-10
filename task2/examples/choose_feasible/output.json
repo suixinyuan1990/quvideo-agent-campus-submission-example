@@ -1,0 +1,295 @@
+{
+  "case_id": "choose_feasible",
+  "note": "初始方案估算 12。其余方案里依赖已满足的低成本方案估算 6，高成本方案估算 15。超预算后按估算选择低成本方案，而不是按目录顺序先做 15。",
+  "theme": "预算内择优",
+  "budget": 10,
+  "deadline": "2026-11-20",
+  "unit": "模拟单位",
+  "completed": true,
+  "reused": false,
+  "task_plan": [
+    {
+      "id": "s1",
+      "tool": "material_search",
+      "title": "素材检索",
+      "plan_id": null
+    },
+    {
+      "id": "s2",
+      "tool": "script_generate",
+      "title": "生成初始方案脚本",
+      "plan_id": "initial"
+    },
+    {
+      "id": "s3",
+      "tool": "cost_estimate",
+      "title": "估算初始方案",
+      "plan_id": "initial"
+    },
+    {
+      "id": "s4",
+      "tool": "script_generate",
+      "title": "生成低成本方案脚本",
+      "plan_id": "lean"
+    },
+    {
+      "id": "s5",
+      "tool": "cost_estimate",
+      "title": "估算低成本方案",
+      "plan_id": "lean"
+    },
+    {
+      "id": "s6",
+      "tool": "plan_save",
+      "title": "保存低成本方案",
+      "plan_id": "lean"
+    }
+  ],
+  "step_status": [
+    {
+      "id": "s1",
+      "tool": "material_search",
+      "title": "素材检索",
+      "plan_id": null,
+      "status": "success",
+      "reason": null,
+      "prior_status": null,
+      "executed_this_run": true
+    },
+    {
+      "id": "s2",
+      "tool": "script_generate",
+      "title": "生成初始方案脚本",
+      "plan_id": "initial",
+      "status": "success",
+      "reason": null,
+      "prior_status": null,
+      "executed_this_run": true
+    },
+    {
+      "id": "s3",
+      "tool": "cost_estimate",
+      "title": "估算初始方案",
+      "plan_id": "initial",
+      "status": "success",
+      "reason": null,
+      "prior_status": null,
+      "executed_this_run": true
+    },
+    {
+      "id": "s4",
+      "tool": "script_generate",
+      "title": "生成低成本方案脚本",
+      "plan_id": "lean",
+      "status": "success",
+      "reason": null,
+      "prior_status": null,
+      "executed_this_run": true
+    },
+    {
+      "id": "s5",
+      "tool": "cost_estimate",
+      "title": "估算低成本方案",
+      "plan_id": "lean",
+      "status": "success",
+      "reason": null,
+      "prior_status": null,
+      "executed_this_run": true
+    },
+    {
+      "id": "s6",
+      "tool": "plan_save",
+      "title": "保存低成本方案",
+      "plan_id": "lean",
+      "status": "success",
+      "reason": null,
+      "prior_status": null,
+      "executed_this_run": true
+    }
+  ],
+  "tool_results": [
+    {
+      "id": "s1",
+      "tool": "material_search",
+      "plan_id": null,
+      "status": "success",
+      "result": {
+        "ok": true,
+        "count": 3,
+        "materials": [
+          {
+            "id": "m-full",
+            "title": "完整主视觉与三套海报",
+            "cost": 7
+          },
+          {
+            "id": "m-long",
+            "title": "加长视频素材",
+            "cost": 9
+          },
+          {
+            "id": "m-short",
+            "title": "一句话海报",
+            "cost": 3
+          }
+        ]
+      },
+      "retained_result": null,
+      "source": null
+    },
+    {
+      "id": "s2",
+      "tool": "script_generate",
+      "plan_id": "initial",
+      "status": "success",
+      "result": {
+        "ok": true,
+        "plan_id": "initial",
+        "script": {
+          "title": "完整上新脚本",
+          "summary": "用三套海报介绍春季新品。",
+          "cost": 5
+        }
+      },
+      "retained_result": null,
+      "source": null
+    },
+    {
+      "id": "s3",
+      "tool": "cost_estimate",
+      "plan_id": "initial",
+      "status": "success",
+      "result": {
+        "ok": true,
+        "plan_id": "initial",
+        "name": "初始方案",
+        "material_cost": 7,
+        "script_cost": 5,
+        "estimate": 12,
+        "budget": 10,
+        "within_budget": false,
+        "over_by": 2,
+        "duration_hours": 16,
+        "available_hours": 254,
+        "within_deadline": true,
+        "unit": "模拟单位"
+      },
+      "retained_result": null,
+      "source": null
+    },
+    {
+      "id": "s4",
+      "tool": "script_generate",
+      "plan_id": "lean",
+      "status": "success",
+      "result": {
+        "ok": true,
+        "plan_id": "lean",
+        "script": {
+          "title": "短脚本",
+          "summary": "用一句话海报说明春季新品。",
+          "cost": 3
+        }
+      },
+      "retained_result": null,
+      "source": null
+    },
+    {
+      "id": "s5",
+      "tool": "cost_estimate",
+      "plan_id": "lean",
+      "status": "success",
+      "result": {
+        "ok": true,
+        "plan_id": "lean",
+        "name": "低成本方案",
+        "material_cost": 3,
+        "script_cost": 3,
+        "estimate": 6,
+        "budget": 10,
+        "within_budget": true,
+        "over_by": 0,
+        "duration_hours": 4,
+        "available_hours": 254,
+        "within_deadline": true,
+        "unit": "模拟单位"
+      },
+      "retained_result": null,
+      "source": null
+    },
+    {
+      "id": "s6",
+      "tool": "plan_save",
+      "plan_id": "lean",
+      "status": "success",
+      "result": {
+        "ok": true,
+        "saved": true,
+        "plan_id": "lean",
+        "estimate": 6
+      },
+      "retained_result": null,
+      "source": null
+    }
+  ],
+  "decisions": [
+    {
+      "seq": 5,
+      "type": "decision",
+      "action": "switch",
+      "rule": "R1",
+      "reason": "初始方案估算 12，预算 10，超出 2。改选低成本方案，准备再次估算。",
+      "from_plan": "initial",
+      "to_plan": "lean",
+      "observed_estimate": 12,
+      "budget": 10,
+      "reason_code": "budget"
+    },
+    {
+      "seq": 8,
+      "type": "decision",
+      "action": "save",
+      "rule": "R1",
+      "reason": "低成本方案估算 6，未超过预算 10，保存该方案。",
+      "plan_id": "lean",
+      "observed_estimate": 6,
+      "budget": 10
+    }
+  ],
+  "total_cost": 6,
+  "incremental_cost": 6,
+  "saved_plan": {
+    "plan_id": "lean",
+    "name": "低成本方案",
+    "theme": "预算内择优",
+    "materials": [
+      {
+        "id": "m-short",
+        "title": "一句话海报",
+        "cost": 3
+      }
+    ],
+    "script": {
+      "title": "短脚本",
+      "summary": "用一句话海报说明春季新品。",
+      "cost": 3
+    },
+    "estimate": 6,
+    "duration_hours": 4,
+    "budget": 10,
+    "deadline": "2026-11-20",
+    "unit": "模拟单位",
+    "rejected_plans": [
+      {
+        "plan_id": "initial",
+        "name": "初始方案",
+        "estimate": 12,
+        "over_by": 2,
+        "within_deadline": true
+      }
+    ]
+  },
+  "incomplete_reason": null,
+  "gap": null,
+  "failed_steps_marked_success": false
+}

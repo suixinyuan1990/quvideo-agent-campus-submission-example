@@ -1,0 +1,19 @@
+{
+  "blocked_phrases": [
+    {
+      "phrase": "保证收益",
+      "code": "guaranteed_return",
+      "reason": "承诺收益"
+    },
+    {
+      "phrase": "零风险",
+      "code": "zero_risk",
+      "reason": "绝对化承诺"
+    },
+    {
+      "phrase": "立刻下单",
+      "code": "pressure_order",
+      "reason": "诱导立即交易"
+    }
+  ]
+}

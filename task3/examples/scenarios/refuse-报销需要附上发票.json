@@ -1,0 +1,115 @@
+{
+  "input": {
+    "question": "报销需要附上发票吗？",
+    "history": []
+  },
+  "output": {
+    "answer": "现有资料不能回答该问题。",
+    "citations": [],
+    "gaps": [
+      "缺少与该问题相关的制度或产品资料。"
+    ],
+    "status": "insufficient_evidence"
+  },
+  "trace": [
+    {
+      "action": "search",
+      "arguments": {
+        "query": "报销需要附上发票吗？"
+      },
+      "output": {
+        "ok": true,
+        "tool": "search",
+        "candidates": [
+          {
+            "doc_id": "POL-EXP-D01",
+            "version_date": "2023-06-01",
+            "doc_type": "policy",
+            "scope": null,
+            "priority": null,
+            "excerpt": "报销期限。报销期限为 30 天。费用发生后 30 天内提交报销申请。逾期申请不予受理。",
+            "excerpt_complete": true,
+            "paths": [
+              "bm25"
+            ],
+            "rank": 1
+          },
+          {
+            "doc_id": "POL-EXP-D02",
+            "version_date": "2024-01-15",
+            "doc_type": "policy",
+            "scope": null,
+            "priority": null,
+            "excerpt": "报销期限。报销期限为 15 天。费用发生后 15 天内提交报销申请。逾期申请不予受理。",
+            "excerpt_complete": true,
+            "paths": [
+              "bm25"
+            ],
+            "rank": 2
+          }
+        ],
+        "path_ranks": {
+          "bm25": [
+            "POL-EXP-D01",
+            "POL-EXP-D02"
+          ],
+          "phrase": [],
+          "ngram": []
+        }
+      }
+    },
+    {
+      "action": "read",
+      "arguments": {
+        "doc_id": "POL-EXP-D01"
+      },
+      "output": {
+        "ok": true,
+        "tool": "read",
+        "found": true,
+        "doc_id": "POL-EXP-D01",
+        "version_date": "2023-06-01",
+        "doc_type": "policy",
+        "scope": null,
+        "priority": null,
+        "text": "报销期限。报销期限为 30 天。费用发生后 30 天内提交报销申请。逾期申请不予受理。",
+        "truncated": false
+      }
+    },
+    {
+      "action": "read",
+      "arguments": {
+        "doc_id": "POL-EXP-D02"
+      },
+      "output": {
+        "ok": true,
+        "tool": "read",
+        "found": true,
+        "doc_id": "POL-EXP-D02",
+        "version_date": "2024-01-15",
+        "doc_type": "policy",
+        "scope": null,
+        "priority": null,
+        "text": "报销期限。报销期限为 15 天。费用发生后 15 天内提交报销申请。逾期申请不予受理。",
+        "truncated": false
+      }
+    },
+    {
+      "action": "finish",
+      "arguments": {
+        "reason": "证据已足够"
+      },
+      "output": {
+        "answer": {
+          "answer": "现有资料不能回答该问题。",
+          "citations": [],
+          "gaps": [
+            "缺少与该问题相关的制度或产品资料。"
+          ],
+          "status": "insufficient_evidence"
+        },
+        "errors": []
+      }
+    }
+  ]
+}

@@ -1,0 +1,9 @@
+{
+  "case_id": "guard_reject_12",
+  "theme": "春季新品上新",
+  "budget": 10,
+  "deadline": "2026-11-20",
+  "as_of": "2026-11-10T09:00:00",
+  "plan_set": "reference",
+  "note": "脚本化决策器，用来验证守卫会拒绝保存估算为 12 的方案。不是在线模型调用。"
+}

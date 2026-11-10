@@ -1,0 +1,381 @@
+{
+  "case_id": "guard_reject_12",
+  "note": "脚本化决策器，用来验证守卫会拒绝保存估算为 12 的方案。不是在线模型调用。",
+  "theme": "春季新品上新",
+  "budget": 10,
+  "deadline": "2026-11-20",
+  "unit": "模拟单位",
+  "completed": true,
+  "reused": false,
+  "task_plan": [
+    {
+      "id": "s1",
+      "tool": "material_search",
+      "title": "素材检索",
+      "plan_id": null
+    },
+    {
+      "id": "s2",
+      "tool": "script_generate",
+      "title": "生成初始方案脚本",
+      "plan_id": "initial"
+    },
+    {
+      "id": "s3",
+      "tool": "cost_estimate",
+      "title": "估算初始方案",
+      "plan_id": "initial"
+    },
+    {
+      "id": "s4",
+      "tool": "script_generate",
+      "title": "生成替代方案脚本",
+      "plan_id": "alternative"
+    },
+    {
+      "id": "s5",
+      "tool": "cost_estimate",
+      "title": "估算替代方案",
+      "plan_id": "alternative"
+    },
+    {
+      "id": "s6",
+      "tool": "plan_save",
+      "title": "保存替代方案",
+      "plan_id": "alternative"
+    }
+  ],
+  "step_status": [
+    {
+      "id": "s1",
+      "tool": "material_search",
+      "title": "素材检索",
+      "plan_id": null,
+      "status": "success",
+      "reason": null,
+      "prior_status": null,
+      "executed_this_run": true
+    },
+    {
+      "id": "s2",
+      "tool": "script_generate",
+      "title": "生成初始方案脚本",
+      "plan_id": "initial",
+      "status": "success",
+      "reason": null,
+      "prior_status": null,
+      "executed_this_run": true
+    },
+    {
+      "id": "s3",
+      "tool": "cost_estimate",
+      "title": "估算初始方案",
+      "plan_id": "initial",
+      "status": "success",
+      "reason": null,
+      "prior_status": null,
+      "executed_this_run": true
+    },
+    {
+      "id": "s4",
+      "tool": "script_generate",
+      "title": "生成替代方案脚本",
+      "plan_id": "alternative",
+      "status": "success",
+      "reason": null,
+      "prior_status": null,
+      "executed_this_run": true
+    },
+    {
+      "id": "s5",
+      "tool": "cost_estimate",
+      "title": "估算替代方案",
+      "plan_id": "alternative",
+      "status": "success",
+      "reason": null,
+      "prior_status": null,
+      "executed_this_run": true
+    },
+    {
+      "id": "s6",
+      "tool": "plan_save",
+      "title": "保存替代方案",
+      "plan_id": "alternative",
+      "status": "success",
+      "reason": null,
+      "prior_status": null,
+      "executed_this_run": true
+    }
+  ],
+  "tool_results": [
+    {
+      "id": "s1",
+      "tool": "material_search",
+      "plan_id": null,
+      "status": "success",
+      "result": {
+        "ok": true,
+        "count": 2,
+        "materials": [
+          {
+            "id": "m-full",
+            "title": "完整主视觉与三套海报",
+            "cost": 7
+          },
+          {
+            "id": "m-lite",
+            "title": "单张主视觉",
+            "cost": 4
+          }
+        ]
+      },
+      "retained_result": null,
+      "source": null
+    },
+    {
+      "id": "s2",
+      "tool": "script_generate",
+      "plan_id": "initial",
+      "status": "success",
+      "result": {
+        "ok": true,
+        "plan_id": "initial",
+        "script": {
+          "title": "完整上新脚本",
+          "summary": "用三套海报介绍春季新品的卖点、价格和上市时间。",
+          "cost": 5
+        }
+      },
+      "retained_result": null,
+      "source": null
+    },
+    {
+      "id": "s3",
+      "tool": "cost_estimate",
+      "plan_id": "initial",
+      "status": "success",
+      "result": {
+        "ok": true,
+        "plan_id": "initial",
+        "name": "初始方案",
+        "material_cost": 7,
+        "script_cost": 5,
+        "estimate": 12,
+        "budget": 10,
+        "within_budget": false,
+        "over_by": 2,
+        "duration_hours": 16,
+        "available_hours": 254,
+        "within_deadline": true,
+        "unit": "模拟单位"
+      },
+      "retained_result": null,
+      "source": null
+    },
+    {
+      "id": "s4",
+      "tool": "script_generate",
+      "plan_id": "alternative",
+      "status": "success",
+      "result": {
+        "ok": true,
+        "plan_id": "alternative",
+        "script": {
+          "title": "精简上新脚本",
+          "summary": "用单张主视觉说明春季新品的卖点和上市时间。",
+          "cost": 4
+        }
+      },
+      "retained_result": null,
+      "source": null
+    },
+    {
+      "id": "s5",
+      "tool": "cost_estimate",
+      "plan_id": "alternative",
+      "status": "success",
+      "result": {
+        "ok": true,
+        "plan_id": "alternative",
+        "name": "替代方案",
+        "material_cost": 4,
+        "script_cost": 4,
+        "estimate": 8,
+        "budget": 10,
+        "within_budget": true,
+        "over_by": 0,
+        "duration_hours": 8,
+        "available_hours": 254,
+        "within_deadline": true,
+        "unit": "模拟单位"
+      },
+      "retained_result": null,
+      "source": null
+    },
+    {
+      "id": "s6",
+      "tool": "plan_save",
+      "plan_id": "alternative",
+      "status": "success",
+      "result": {
+        "ok": true,
+        "saved": true,
+        "plan_id": "alternative",
+        "estimate": 8
+      },
+      "retained_result": null,
+      "source": null
+    }
+  ],
+  "decisions": [
+    {
+      "seq": 2,
+      "type": "decision",
+      "action": "continue",
+      "rule": "model",
+      "reason": "检索素材",
+      "proposed_by": "model",
+      "accepted": true,
+      "to_plan": null,
+      "plan_id": null,
+      "observed_estimate": null,
+      "budget": 10
+    },
+    {
+      "seq": 4,
+      "type": "decision",
+      "action": "continue",
+      "rule": "model",
+      "reason": "生成初始脚本",
+      "proposed_by": "model",
+      "accepted": true,
+      "to_plan": null,
+      "plan_id": null,
+      "observed_estimate": null,
+      "budget": 10
+    },
+    {
+      "seq": 6,
+      "type": "decision",
+      "action": "continue",
+      "rule": "model",
+      "reason": "估算初始方案",
+      "proposed_by": "model",
+      "accepted": true,
+      "to_plan": null,
+      "plan_id": null,
+      "observed_estimate": null,
+      "budget": 10
+    },
+    {
+      "seq": 8,
+      "type": "decision",
+      "action": "save",
+      "rule": "model",
+      "reason": "保存初始方案",
+      "proposed_by": "model",
+      "accepted": false,
+      "to_plan": null,
+      "plan_id": "initial",
+      "observed_estimate": 12,
+      "budget": 10
+    },
+    {
+      "seq": 9,
+      "type": "decision",
+      "action": "reject",
+      "rule": "guard",
+      "reason": "估算 12 超过预算 10 或赶不上截止时间，拒绝保存。",
+      "proposed_action": "save",
+      "accepted": false
+    },
+    {
+      "seq": 10,
+      "type": "decision",
+      "action": "switch",
+      "rule": "model",
+      "reason": "改选替代方案",
+      "proposed_by": "model",
+      "accepted": true,
+      "to_plan": "alternative",
+      "plan_id": null,
+      "observed_estimate": 12,
+      "budget": 10
+    },
+    {
+      "seq": 11,
+      "type": "decision",
+      "action": "continue",
+      "rule": "model",
+      "reason": "生成替代脚本",
+      "proposed_by": "model",
+      "accepted": true,
+      "to_plan": null,
+      "plan_id": null,
+      "observed_estimate": null,
+      "budget": 10
+    },
+    {
+      "seq": 13,
+      "type": "decision",
+      "action": "continue",
+      "rule": "model",
+      "reason": "估算替代方案",
+      "proposed_by": "model",
+      "accepted": true,
+      "to_plan": null,
+      "plan_id": null,
+      "observed_estimate": null,
+      "budget": 10
+    },
+    {
+      "seq": 15,
+      "type": "decision",
+      "action": "save",
+      "rule": "model",
+      "reason": "保存替代方案",
+      "proposed_by": "model",
+      "accepted": true,
+      "to_plan": null,
+      "plan_id": "alternative",
+      "observed_estimate": 8,
+      "budget": 10
+    }
+  ],
+  "total_cost": 8,
+  "incremental_cost": 8,
+  "saved_plan": {
+    "plan_id": "alternative",
+    "name": "替代方案",
+    "theme": "春季新品上新",
+    "materials": [
+      {
+        "id": "m-lite",
+        "title": "单张主视觉",
+        "cost": 4
+      }
+    ],
+    "script": {
+      "title": "精简上新脚本",
+      "summary": "用单张主视觉说明春季新品的卖点和上市时间。",
+      "cost": 4
+    },
+    "estimate": 8,
+    "duration_hours": 8,
+    "budget": 10,
+    "deadline": "2026-11-20",
+    "unit": "模拟单位",
+    "rejected_plans": [
+      {
+        "plan_id": "initial",
+        "name": "初始方案",
+        "estimate": 12,
+        "over_by": 2,
+        "within_deadline": true
+      }
+    ]
+  },
+  "incomplete_reason": null,
+  "gap": null,
+  "failed_steps_marked_success": false
+}

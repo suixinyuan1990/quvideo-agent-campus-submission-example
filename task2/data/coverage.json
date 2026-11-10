@@ -1,0 +1,13 @@
+{
+  "normal": ["正常完成"],
+  "over_budget_switch": ["预算超限", "调整后完成"],
+  "no_feasible": ["预算超限", "未完成及缺口"],
+  "missing_info": ["缺预算或截止时间", "信息不足"],
+  "insufficient_materials": ["资料不足"],
+  "tool_failure": ["工具失败", "失败步骤不记为成功"],
+  "repeat": ["重复执行"],
+  "partial_materials": ["部分成功", "预算内替代"],
+  "resume_failed": ["失败步骤续跑", "失败步骤不记为成功"],
+  "replan_after_failure": ["工具失败", "失败后重规划", "保留成功结果"],
+  "choose_feasible": ["预算超限", "按依赖和预算选择方案"]
+}

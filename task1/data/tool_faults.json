@@ -1,0 +1,27 @@
+{
+  "save_draft": [
+    {
+      "material_id": "M04",
+      "error": "storage_unavailable",
+      "message": "草稿存储不可用",
+      "retryable": false,
+      "fail_count": 1
+    }
+  ],
+  "check_rules": [
+    {
+      "material_id": "M11",
+      "error": "rule_service_timeout",
+      "message": "规则服务超时",
+      "retryable": true,
+      "fail_count": 2
+    },
+    {
+      "material_id": "M12",
+      "error": "rule_service_timeout",
+      "message": "规则服务超时",
+      "retryable": true,
+      "fail_count": 1
+    }
+  ]
+}

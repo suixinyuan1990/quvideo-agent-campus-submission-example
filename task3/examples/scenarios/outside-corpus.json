@@ -1,0 +1,49 @@
+{
+  "input": {
+    "question": "公司班车今晚几点发车？",
+    "history": []
+  },
+  "output": {
+    "answer": "现有资料不能回答该问题。",
+    "citations": [],
+    "gaps": [
+      "缺少与该问题相关的制度或产品资料。"
+    ],
+    "status": "insufficient_evidence"
+  },
+  "trace": [
+    {
+      "action": "search",
+      "arguments": {
+        "query": "公司班车今晚几点发车？"
+      },
+      "output": {
+        "ok": true,
+        "tool": "search",
+        "candidates": [],
+        "path_ranks": {
+          "bm25": [],
+          "phrase": [],
+          "ngram": []
+        }
+      }
+    },
+    {
+      "action": "finish",
+      "arguments": {
+        "reason": "没有相关文档"
+      },
+      "output": {
+        "answer": {
+          "answer": "现有资料不能回答该问题。",
+          "citations": [],
+          "gaps": [
+            "缺少与该问题相关的制度或产品资料。"
+          ],
+          "status": "insufficient_evidence"
+        },
+        "errors": []
+      }
+    }
+  ]
+}

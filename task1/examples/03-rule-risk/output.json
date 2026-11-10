@@ -1,0 +1,46 @@
+{
+  "run_status": "completed",
+  "outcome": "blocked_by_rule",
+  "material_id": "M03",
+  "review_status": "blocked",
+  "risk_reasons": [
+    "承诺收益（保证收益）",
+    "绝对化承诺（零风险）",
+    "诱导立即交易（立刻下单）"
+  ],
+  "requested_slot": "09:00",
+  "requested_date": "2026-11-17",
+  "hard_requirement": true,
+  "suggested_slot": null,
+  "committed_slot": null,
+  "hard_requirement_changed": false,
+  "change_authorized": false,
+  "confirmation_status": null,
+  "pending_confirmations": [
+    "存在阻断级规则风险，未排期。"
+  ],
+  "draft_save_status": "not_saved",
+  "draft_id": null,
+  "saved_draft": null,
+  "publish_state": "not_published",
+  "save_error": null,
+  "tool_error": null,
+  "message": "素材有阻断级规则风险，已停止排期，未保存草稿，未发布。",
+  "incomplete_reason": null,
+  "store_draft_count": 0,
+  "progress": {
+    "material_loaded": true,
+    "material_complete": true,
+    "rules_checked": true,
+    "rules_clear": false,
+    "slots_checked": false,
+    "save_called": false
+  },
+  "limits": {
+    "max_steps": 8,
+    "max_tool_calls": 8,
+    "decision_count": 3,
+    "tool_calls_used": 2,
+    "hit_limit": false
+  }
+}

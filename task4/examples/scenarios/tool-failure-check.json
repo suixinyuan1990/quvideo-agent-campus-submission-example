@@ -1,0 +1,125 @@
+{
+  "input": {
+    "theme": "介绍支持字幕",
+    "duration_sec": 30.0,
+    "audience": "功能介绍观众",
+    "platform": "抖音",
+    "style": "口播"
+  },
+  "result": {
+    "title": "支持字幕",
+    "shots": [
+      {
+        "index": 1,
+        "visual": "产品界面",
+        "narration": "这个功能支持字幕",
+        "subtitle": "这个功能支持字幕",
+        "source_ids": [
+          "P01"
+        ],
+        "duration_sec": 2.0
+      }
+    ],
+    "estimated_duration_sec": 2.0,
+    "source_ids": [
+      "P01"
+    ],
+    "risks": [],
+    "status": "tool_failure",
+    "message": "工具规则检查失败，规则未检查。"
+  },
+  "trace": [
+    {
+      "action": "search",
+      "arguments": {
+        "query": "介绍支持字幕"
+      },
+      "attempt": 1,
+      "ok": true,
+      "observation": [
+        {
+          "source_id": "P01",
+          "body": "功能#支持字幕",
+          "attributes": [
+            {
+              "key": "功能",
+              "value": "支持字幕"
+            }
+          ],
+          "matched_values": [
+            "支持字幕"
+          ],
+          "score": 9.176040783498918
+        }
+      ]
+    },
+    {
+      "action": "draft",
+      "arguments": {
+        "action": "draft",
+        "title": "支持字幕",
+        "shots": [
+          {
+            "index": 1,
+            "visual": "产品界面",
+            "narration": "这个功能支持字幕",
+            "subtitle": "这个功能支持字幕",
+            "source_ids": [
+              "P01"
+            ]
+          }
+        ]
+      },
+      "ok": true,
+      "observation": {
+        "revision": 0
+      }
+    },
+    {
+      "action": "estimate",
+      "arguments": {},
+      "attempt": 1,
+      "ok": true,
+      "observation": {
+        "total_ms": 2000,
+        "total_sec": 2.0,
+        "shots": [
+          {
+            "index": 1,
+            "duration_ms": 2000,
+            "duration_sec": 2.0,
+            "spoken_chars": 8
+          }
+        ],
+        "chars_per_second": 4.0
+      }
+    },
+    {
+      "action": "check_rules",
+      "arguments": {},
+      "attempt": 1,
+      "ok": false,
+      "observation": {
+        "error": "规则检查"
+      }
+    },
+    {
+      "action": "check_rules",
+      "arguments": {},
+      "attempt": 2,
+      "ok": false,
+      "observation": {
+        "error": "规则检查"
+      }
+    },
+    {
+      "action": "finish",
+      "arguments": {
+        "status": "tool_failure",
+        "message": "工具规则检查失败，规则未检查。"
+      },
+      "ok": true,
+      "observation": {}
+    }
+  ]
+}

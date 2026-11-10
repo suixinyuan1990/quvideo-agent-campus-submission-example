@@ -1,0 +1,101 @@
+{
+  "case_id": "missing_info",
+  "note": "缺少预算。不补造预算，不保存方案。",
+  "theme": "春季新品上新",
+  "budget": null,
+  "deadline": "2026-11-20",
+  "unit": "模拟单位",
+  "completed": false,
+  "reused": false,
+  "task_plan": [
+    {
+      "id": "s1",
+      "tool": "material_search",
+      "title": "素材检索",
+      "plan_id": null
+    },
+    {
+      "id": "s2",
+      "tool": "script_generate",
+      "title": "脚本生成",
+      "plan_id": null
+    },
+    {
+      "id": "s3",
+      "tool": "cost_estimate",
+      "title": "成本估算",
+      "plan_id": null
+    },
+    {
+      "id": "s4",
+      "tool": "plan_save",
+      "title": "方案保存",
+      "plan_id": null
+    }
+  ],
+  "step_status": [
+    {
+      "id": "s1",
+      "tool": "material_search",
+      "title": "素材检索",
+      "plan_id": null,
+      "status": "not_run",
+      "reason": "缺少预算，不补造缺失字段，方案未保存。",
+      "prior_status": null,
+      "executed_this_run": false
+    },
+    {
+      "id": "s2",
+      "tool": "script_generate",
+      "title": "脚本生成",
+      "plan_id": null,
+      "status": "not_run",
+      "reason": "缺少预算，不补造缺失字段，方案未保存。",
+      "prior_status": null,
+      "executed_this_run": false
+    },
+    {
+      "id": "s3",
+      "tool": "cost_estimate",
+      "title": "成本估算",
+      "plan_id": null,
+      "status": "not_run",
+      "reason": "缺少预算，不补造缺失字段，方案未保存。",
+      "prior_status": null,
+      "executed_this_run": false
+    },
+    {
+      "id": "s4",
+      "tool": "plan_save",
+      "title": "方案保存",
+      "plan_id": null,
+      "status": "not_run",
+      "reason": "缺少预算，不补造缺失字段，方案未保存。",
+      "prior_status": null,
+      "executed_this_run": false
+    }
+  ],
+  "tool_results": [],
+  "decisions": [
+    {
+      "seq": 1,
+      "type": "decision",
+      "action": "stop",
+      "rule": "R4",
+      "reason": "缺少预算，不补造缺失字段，方案未保存。",
+      "missing_fields": [
+        "预算"
+      ]
+    }
+  ],
+  "total_cost": 0,
+  "incremental_cost": 0,
+  "saved_plan": null,
+  "incomplete_reason": "缺少预算，不补造缺失字段，方案未保存。",
+  "gap": {
+    "missing_fields": [
+      "预算"
+    ]
+  },
+  "failed_steps_marked_success": false
+}

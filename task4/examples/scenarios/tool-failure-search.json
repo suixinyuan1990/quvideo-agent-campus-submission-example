@@ -1,0 +1,51 @@
+{
+  "input": {
+    "theme": "介绍支持字幕",
+    "duration_sec": 30.0,
+    "audience": "功能介绍观众",
+    "platform": "抖音",
+    "style": "口播"
+  },
+  "result": {
+    "title": "",
+    "shots": [],
+    "estimated_duration_sec": null,
+    "source_ids": [],
+    "risks": [],
+    "status": "tool_failure",
+    "message": "工具素材检索失败，素材未核实。"
+  },
+  "trace": [
+    {
+      "action": "search",
+      "arguments": {
+        "query": "介绍支持字幕"
+      },
+      "attempt": 1,
+      "ok": false,
+      "observation": {
+        "error": "素材检索"
+      }
+    },
+    {
+      "action": "search",
+      "arguments": {
+        "query": "介绍支持字幕"
+      },
+      "attempt": 2,
+      "ok": false,
+      "observation": {
+        "error": "素材检索"
+      }
+    },
+    {
+      "action": "finish",
+      "arguments": {
+        "status": "tool_failure",
+        "message": "工具素材检索失败，素材未核实。"
+      },
+      "ok": true,
+      "observation": {}
+    }
+  ]
+}

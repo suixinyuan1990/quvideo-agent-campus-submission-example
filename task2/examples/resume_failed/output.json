@@ -1,0 +1,346 @@
+{
+  "case_id": "resume_failed",
+  "note": "第一次脚本生成失败。第二次从失败步骤继续，素材检索不重跑，费用不重复计算。",
+  "runs": [
+    {
+      "case_id": "resume_failed",
+      "note": "第一次脚本生成失败。第二次从失败步骤继续，素材检索不重跑，费用不重复计算。",
+      "theme": "脚本失败后续跑",
+      "budget": 10,
+      "deadline": "2026-11-20",
+      "unit": "模拟单位",
+      "completed": false,
+      "reused": false,
+      "task_plan": [
+        {
+          "id": "s1",
+          "tool": "material_search",
+          "title": "素材检索",
+          "plan_id": null
+        },
+        {
+          "id": "s2",
+          "tool": "script_generate",
+          "title": "生成续跑方案脚本",
+          "plan_id": "initial"
+        },
+        {
+          "id": "s3",
+          "tool": "cost_estimate",
+          "title": "成本估算",
+          "plan_id": null
+        },
+        {
+          "id": "s4",
+          "tool": "plan_save",
+          "title": "方案保存",
+          "plan_id": null
+        }
+      ],
+      "step_status": [
+        {
+          "id": "s1",
+          "tool": "material_search",
+          "title": "素材检索",
+          "plan_id": null,
+          "status": "success",
+          "reason": null,
+          "prior_status": null,
+          "executed_this_run": true
+        },
+        {
+          "id": "s2",
+          "tool": "script_generate",
+          "title": "生成续跑方案脚本",
+          "plan_id": "initial",
+          "status": "failed",
+          "reason": null,
+          "prior_status": null,
+          "executed_this_run": true
+        },
+        {
+          "id": "s3",
+          "tool": "cost_estimate",
+          "title": "成本估算",
+          "plan_id": null,
+          "status": "not_run",
+          "reason": "脚本生成失败。失败步骤保持 failed，方案未保存。",
+          "prior_status": null,
+          "executed_this_run": false
+        },
+        {
+          "id": "s4",
+          "tool": "plan_save",
+          "title": "方案保存",
+          "plan_id": null,
+          "status": "not_run",
+          "reason": "脚本生成失败。失败步骤保持 failed，方案未保存。",
+          "prior_status": null,
+          "executed_this_run": false
+        }
+      ],
+      "tool_results": [
+        {
+          "id": "s1",
+          "tool": "material_search",
+          "plan_id": null,
+          "status": "success",
+          "result": {
+            "ok": true,
+            "count": 1,
+            "materials": [
+              {
+                "id": "m-resume",
+                "title": "活动海报",
+                "cost": 5
+              }
+            ]
+          },
+          "retained_result": null,
+          "source": null
+        },
+        {
+          "id": "s2",
+          "tool": "script_generate",
+          "plan_id": "initial",
+          "status": "failed",
+          "result": {
+            "ok": false,
+            "error": "TOOL_ERROR",
+            "message": "脚本生成失败"
+          },
+          "retained_result": null,
+          "source": null
+        }
+      ],
+      "decisions": [
+        {
+          "seq": 4,
+          "type": "decision",
+          "action": "stop",
+          "rule": "R3",
+          "reason": "脚本生成失败。失败步骤保持 failed，方案未保存。",
+          "failed_tool": "script_generate",
+          "plan_id": "initial"
+        }
+      ],
+      "total_cost": 0,
+      "incremental_cost": 0,
+      "saved_plan": null,
+      "incomplete_reason": "脚本生成失败。失败步骤保持 failed，方案未保存。",
+      "gap": null,
+      "failed_steps_marked_success": false,
+      "run": 1
+    },
+    {
+      "case_id": "resume_failed",
+      "note": "第一次脚本生成失败。第二次从失败步骤继续，素材检索不重跑，费用不重复计算。",
+      "theme": "脚本失败后续跑",
+      "budget": 10,
+      "deadline": "2026-11-20",
+      "unit": "模拟单位",
+      "completed": true,
+      "reused": false,
+      "task_plan": [
+        {
+          "id": "s1",
+          "tool": "material_search",
+          "title": "素材检索",
+          "plan_id": null
+        },
+        {
+          "id": "s2",
+          "tool": "script_generate",
+          "title": "生成续跑方案脚本",
+          "plan_id": "initial"
+        },
+        {
+          "id": "s3",
+          "tool": "cost_estimate",
+          "title": "估算续跑方案",
+          "plan_id": "initial"
+        },
+        {
+          "id": "s4",
+          "tool": "plan_save",
+          "title": "保存续跑方案",
+          "plan_id": "initial"
+        }
+      ],
+      "step_status": [
+        {
+          "id": "s1",
+          "tool": "material_search",
+          "title": "素材检索",
+          "plan_id": null,
+          "status": "skipped",
+          "reason": "已完成，不重复执行",
+          "prior_status": "success",
+          "executed_this_run": false
+        },
+        {
+          "id": "s2",
+          "tool": "script_generate",
+          "title": "生成续跑方案脚本",
+          "plan_id": "initial",
+          "status": "success",
+          "reason": null,
+          "prior_status": null,
+          "executed_this_run": true
+        },
+        {
+          "id": "s3",
+          "tool": "cost_estimate",
+          "title": "估算续跑方案",
+          "plan_id": "initial",
+          "status": "success",
+          "reason": null,
+          "prior_status": null,
+          "executed_this_run": true
+        },
+        {
+          "id": "s4",
+          "tool": "plan_save",
+          "title": "保存续跑方案",
+          "plan_id": "initial",
+          "status": "success",
+          "reason": null,
+          "prior_status": null,
+          "executed_this_run": true
+        }
+      ],
+      "tool_results": [
+        {
+          "id": "s1",
+          "tool": "material_search",
+          "plan_id": null,
+          "status": "skipped",
+          "result": null,
+          "retained_result": {
+            "ok": true,
+            "count": 1,
+            "materials": [
+              {
+                "id": "m-resume",
+                "title": "活动海报",
+                "cost": 5
+              }
+            ]
+          },
+          "source": "previous_run"
+        },
+        {
+          "id": "s2",
+          "tool": "script_generate",
+          "plan_id": "initial",
+          "status": "success",
+          "result": {
+            "ok": true,
+            "plan_id": "initial",
+            "script": {
+              "title": "续跑脚本",
+              "summary": "第一次生成失败，第二次沿用已检索海报并完成脚本。",
+              "cost": 3
+            }
+          },
+          "retained_result": null,
+          "source": null
+        },
+        {
+          "id": "s3",
+          "tool": "cost_estimate",
+          "plan_id": "initial",
+          "status": "success",
+          "result": {
+            "ok": true,
+            "plan_id": "initial",
+            "name": "续跑方案",
+            "material_cost": 5,
+            "script_cost": 3,
+            "estimate": 8,
+            "budget": 10,
+            "within_budget": true,
+            "over_by": 0,
+            "duration_hours": 6,
+            "available_hours": 254,
+            "within_deadline": true,
+            "unit": "模拟单位"
+          },
+          "retained_result": null,
+          "source": null
+        },
+        {
+          "id": "s4",
+          "tool": "plan_save",
+          "plan_id": "initial",
+          "status": "success",
+          "result": {
+            "ok": true,
+            "saved": true,
+            "plan_id": "initial",
+            "estimate": 8
+          },
+          "retained_result": null,
+          "source": null
+        }
+      ],
+      "decisions": [
+        {
+          "seq": 2,
+          "type": "decision",
+          "action": "retry",
+          "rule": "R3",
+          "reason": "从失败步骤继续：脚本生成失败。已成功步骤不重复执行，费用不重算。",
+          "failed_tool": "script_generate"
+        },
+        {
+          "seq": 6,
+          "type": "decision",
+          "action": "save",
+          "rule": "R7",
+          "reason": "续跑方案估算 8，未超过预算 10，保存该方案。",
+          "plan_id": "initial",
+          "observed_estimate": 8,
+          "budget": 10
+        }
+      ],
+      "total_cost": 8,
+      "incremental_cost": 8,
+      "saved_plan": {
+        "plan_id": "initial",
+        "name": "续跑方案",
+        "theme": "脚本失败后续跑",
+        "materials": [
+          {
+            "id": "m-resume",
+            "title": "活动海报",
+            "cost": 5
+          }
+        ],
+        "script": {
+          "title": "续跑脚本",
+          "summary": "第一次生成失败，第二次沿用已检索海报并完成脚本。",
+          "cost": 3
+        },
+        "estimate": 8,
+        "duration_hours": 6,
+        "budget": 10,
+        "deadline": "2026-11-20",
+        "unit": "模拟单位",
+        "rejected_plans": []
+      },
+      "incomplete_reason": null,
+      "gap": null,
+      "failed_steps_marked_success": false,
+      "run": 2
+    }
+  ],
+  "repeat_check": {
+    "run1_total_cost": 0,
+    "run2_total_cost": 8,
+    "run2_incremental_cost": 8,
+    "resumed": true,
+    "reran_successful_steps": false,
+    "double_counted": false
+  }
+}

@@ -1,0 +1,9 @@
+{
+  "case_id": "missing_info",
+  "note": "缺少预算。不补造预算，不保存方案。",
+  "theme": "春季新品上新",
+  "budget": null,
+  "deadline": "2026-11-20",
+  "as_of": "2026-11-10T09:00:00",
+  "plan_set": "reference"
+}

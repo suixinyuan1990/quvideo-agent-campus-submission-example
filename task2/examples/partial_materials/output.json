@@ -1,0 +1,218 @@
+{
+  "case_id": "partial_materials",
+  "note": "详情页缺失。初始方案不能成形，已检索到的素材保留，改选只需单张主视觉的替代方案，估算 8 后保存。",
+  "theme": "春季新品上新",
+  "budget": 10,
+  "deadline": "2026-11-20",
+  "unit": "模拟单位",
+  "completed": true,
+  "reused": false,
+  "task_plan": [
+    {
+      "id": "s1",
+      "tool": "material_search",
+      "title": "素材检索",
+      "plan_id": null
+    },
+    {
+      "id": "s2",
+      "tool": "script_generate",
+      "title": "生成替代方案脚本",
+      "plan_id": "alternative"
+    },
+    {
+      "id": "s3",
+      "tool": "cost_estimate",
+      "title": "估算替代方案",
+      "plan_id": "alternative"
+    },
+    {
+      "id": "s4",
+      "tool": "plan_save",
+      "title": "保存替代方案",
+      "plan_id": "alternative"
+    }
+  ],
+  "step_status": [
+    {
+      "id": "s1",
+      "tool": "material_search",
+      "title": "素材检索",
+      "plan_id": null,
+      "status": "success",
+      "reason": null,
+      "prior_status": null,
+      "executed_this_run": true
+    },
+    {
+      "id": "s2",
+      "tool": "script_generate",
+      "title": "生成替代方案脚本",
+      "plan_id": "alternative",
+      "status": "success",
+      "reason": null,
+      "prior_status": null,
+      "executed_this_run": true
+    },
+    {
+      "id": "s3",
+      "tool": "cost_estimate",
+      "title": "估算替代方案",
+      "plan_id": "alternative",
+      "status": "success",
+      "reason": null,
+      "prior_status": null,
+      "executed_this_run": true
+    },
+    {
+      "id": "s4",
+      "tool": "plan_save",
+      "title": "保存替代方案",
+      "plan_id": "alternative",
+      "status": "success",
+      "reason": null,
+      "prior_status": null,
+      "executed_this_run": true
+    }
+  ],
+  "tool_results": [
+    {
+      "id": "s1",
+      "tool": "material_search",
+      "plan_id": null,
+      "status": "success",
+      "result": {
+        "ok": true,
+        "count": 2,
+        "materials": [
+          {
+            "id": "m-full",
+            "title": "完整主视觉",
+            "cost": 7,
+            "available": true
+          },
+          {
+            "id": "m-lite",
+            "title": "单张主视觉",
+            "cost": 4,
+            "available": true
+          }
+        ],
+        "missing": [
+          "详情页"
+        ],
+        "partial": true
+      },
+      "retained_result": null,
+      "source": null
+    },
+    {
+      "id": "s2",
+      "tool": "script_generate",
+      "plan_id": "alternative",
+      "status": "success",
+      "result": {
+        "ok": true,
+        "plan_id": "alternative",
+        "script": {
+          "title": "精简上新脚本",
+          "summary": "只用已经检索到的单张主视觉说明卖点。",
+          "cost": 4
+        }
+      },
+      "retained_result": null,
+      "source": null
+    },
+    {
+      "id": "s3",
+      "tool": "cost_estimate",
+      "plan_id": "alternative",
+      "status": "success",
+      "result": {
+        "ok": true,
+        "plan_id": "alternative",
+        "name": "替代方案",
+        "material_cost": 4,
+        "script_cost": 4,
+        "estimate": 8,
+        "budget": 10,
+        "within_budget": true,
+        "over_by": 0,
+        "duration_hours": 8,
+        "available_hours": 254,
+        "within_deadline": true,
+        "unit": "模拟单位"
+      },
+      "retained_result": null,
+      "source": null
+    },
+    {
+      "id": "s4",
+      "tool": "plan_save",
+      "plan_id": "alternative",
+      "status": "success",
+      "result": {
+        "ok": true,
+        "saved": true,
+        "plan_id": "alternative",
+        "estimate": 8
+      },
+      "retained_result": null,
+      "source": null
+    }
+  ],
+  "decisions": [
+    {
+      "seq": 3,
+      "type": "decision",
+      "action": "switch",
+      "rule": "R5",
+      "reason": "初始方案缺少详情页，无法形成完整方案。改选替代方案。",
+      "from_plan": "initial",
+      "to_plan": "alternative",
+      "missing_materials": [
+        "详情页"
+      ],
+      "reason_code": "dependency"
+    },
+    {
+      "seq": 6,
+      "type": "decision",
+      "action": "save",
+      "rule": "R7",
+      "reason": "替代方案估算 8，未超过预算 10，保存该方案。",
+      "plan_id": "alternative",
+      "observed_estimate": 8,
+      "budget": 10
+    }
+  ],
+  "total_cost": 8,
+  "incremental_cost": 8,
+  "saved_plan": {
+    "plan_id": "alternative",
+    "name": "替代方案",
+    "theme": "春季新品上新",
+    "materials": [
+      {
+        "id": "m-lite",
+        "title": "单张主视觉",
+        "cost": 4,
+        "available": true
+      }
+    ],
+    "script": {
+      "title": "精简上新脚本",
+      "summary": "只用已经检索到的单张主视觉说明卖点。",
+      "cost": 4
+    },
+    "estimate": 8,
+    "duration_hours": 8,
+    "budget": 10,
+    "deadline": "2026-11-20",
+    "unit": "模拟单位",
+    "rejected_plans": []
+  },
+  "incomplete_reason": null,
+  "gap": null,
+  "failed_steps_marked_success": false
+}

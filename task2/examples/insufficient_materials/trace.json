@@ -1,0 +1,73 @@
+{
+  "case_id": "insufficient_materials",
+  "decision_source": "local_policy",
+  "events": [
+    {
+      "seq": 1,
+      "type": "plan_init",
+      "decision_source": "local_policy",
+      "budget": 10,
+      "deadline": "2026-11-20",
+      "available_hours": 254,
+      "plan_ids": []
+    },
+    {
+      "seq": 2,
+      "type": "tool",
+      "tool": "material_search",
+      "title": "素材检索",
+      "status": "success",
+      "plan_id": null,
+      "request": {
+        "theme": "未建档活动"
+      },
+      "result": {
+        "ok": true,
+        "count": 0,
+        "materials": []
+      },
+      "reason": null
+    },
+    {
+      "seq": 3,
+      "type": "decision",
+      "action": "stop",
+      "rule": "R5",
+      "reason": "无可用素材，方案未保存。",
+      "material_count": 0
+    },
+    {
+      "seq": 4,
+      "type": "tool",
+      "tool": "script_generate",
+      "title": "脚本生成",
+      "status": "not_run",
+      "plan_id": null,
+      "request": null,
+      "result": null,
+      "reason": "无可用素材，方案未保存。"
+    },
+    {
+      "seq": 5,
+      "type": "tool",
+      "tool": "cost_estimate",
+      "title": "成本估算",
+      "status": "not_run",
+      "plan_id": null,
+      "request": null,
+      "result": null,
+      "reason": "无可用素材，方案未保存。"
+    },
+    {
+      "seq": 6,
+      "type": "tool",
+      "tool": "plan_save",
+      "title": "方案保存",
+      "status": "not_run",
+      "plan_id": null,
+      "request": null,
+      "result": null,
+      "reason": "无可用素材，方案未保存。"
+    }
+  ]
+}

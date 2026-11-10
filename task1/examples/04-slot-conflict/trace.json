@@ -1,0 +1,152 @@
+{
+  "run_status": "completed",
+  "outcome": "pending_confirmation",
+  "material_id": "M01",
+  "max_steps": 8,
+  "max_tool_calls": 8,
+  "decision_count": 5,
+  "tool_calls_used": 4,
+  "hit_limit": false,
+  "incomplete_reason": null,
+  "stopped": null,
+  "final_decision": {
+    "action": "finish",
+    "arguments": null,
+    "decision_basis": "草稿已保存，确认状态为待确认，硬性发布时间没有改写。结束。"
+  },
+  "steps": [
+    {
+      "step": 1,
+      "tool": "read_material",
+      "arguments": {
+        "material_id": "M01",
+        "refresh": false
+      },
+      "decision_basis": "还没有素材观察结果，先读取素材元数据和发布时间要求。",
+      "result_summary": "素材齐全，发布时间 18:00（2026-11-12），硬性要求=是",
+      "result": {
+        "ok": true,
+        "summary": "素材齐全，发布时间 18:00（2026-11-12），硬性要求=是",
+        "material": {
+          "id": "M01",
+          "title": "春季会员日预告",
+          "body": "会员日全场九折，活动细则以页面为准。",
+          "channel": "app_push",
+          "audience": "members",
+          "requested_slot": "18:00",
+          "date": "2026-11-12",
+          "hard_requirement": true,
+          "content_revision": "r1",
+          "queue_status": "pending"
+        },
+        "missing_fields": [],
+        "complete": true,
+        "refreshed": false
+      },
+      "next_action": "check_rules",
+      "next_arguments": {
+        "material_id": "M01"
+      },
+      "next_decision_basis": "素材字段已经齐全，下一步检查审核规则。"
+    },
+    {
+      "step": 2,
+      "tool": "check_rules",
+      "arguments": {
+        "material_id": "M01"
+      },
+      "decision_basis": "素材字段已经齐全，下一步检查审核规则。",
+      "result_summary": "规则检查通过，无风险",
+      "result": {
+        "ok": true,
+        "summary": "规则检查通过，无风险",
+        "material_id": "M01",
+        "risks": [],
+        "blocking": false
+      },
+      "next_action": "query_slots",
+      "next_arguments": {
+        "date": "2026-11-12",
+        "slot": "18:00",
+        "material_id": "M01"
+      },
+      "next_decision_basis": "规则检查通过，查询要求的发布时间是否可用。"
+    },
+    {
+      "step": 3,
+      "tool": "query_slots",
+      "arguments": {
+        "date": "2026-11-12",
+        "slot": "18:00",
+        "material_id": "M01"
+      },
+      "decision_basis": "规则检查通过，查询要求的发布时间是否可用。",
+      "result_summary": "18:00 已被占用（SCH-1800），可用替代时段 19:00",
+      "result": {
+        "ok": true,
+        "summary": "18:00 已被占用（SCH-1800），可用替代时段 19:00",
+        "date": "2026-11-12",
+        "slot": "18:00",
+        "known": true,
+        "preferred_free": false,
+        "occupied_by": "SCH-1800",
+        "alternative": "19:00",
+        "free_slots": [
+          "19:00"
+        ],
+        "occupied_slots": [
+          "18:00"
+        ]
+      },
+      "next_action": "save_draft",
+      "next_arguments": {
+        "material_id": "M01",
+        "suggested_slot": "19:00",
+        "commit": false,
+        "confirmed_slot": null
+      },
+      "next_decision_basis": "要求的时段已被占用，而且用户没有确认替代时段。建议可用替代时段并标记待确认，不改写硬性发布时间。"
+    },
+    {
+      "step": 4,
+      "tool": "save_draft",
+      "arguments": {
+        "material_id": "M01",
+        "suggested_slot": "19:00",
+        "commit": false,
+        "confirmed_slot": null
+      },
+      "decision_basis": "要求的时段已被占用，而且用户没有确认替代时段。建议可用替代时段并标记待确认，不改写硬性发布时间。",
+      "result_summary": "已新建草稿 D-55e1dafed554，未发布",
+      "result": {
+        "ok": true,
+        "created": true,
+        "duplicate": false,
+        "summary": "已新建草稿 D-55e1dafed554，未发布",
+        "draft_id": "D-55e1dafed554",
+        "draft": {
+          "draft_id": "D-55e1dafed554",
+          "material_id": "M01",
+          "content_revision": "r1",
+          "date": "2026-11-12",
+          "requested_slot": "18:00",
+          "suggested_slot": "19:00",
+          "committed_slot": null,
+          "hard_requirement": true,
+          "hard_requirement_changed": false,
+          "change_authorized": false,
+          "confirmation_status": "pending",
+          "review_status": "pending_confirmation",
+          "risk_reasons": [],
+          "publish_state": "not_published"
+        },
+        "publish_state": "not_published",
+        "confirmation_status": "pending",
+        "store_draft_count": 1
+      },
+      "next_action": "finish",
+      "next_arguments": null,
+      "next_decision_basis": "草稿已保存，确认状态为待确认，硬性发布时间没有改写。结束。"
+    }
+  ]
+}

@@ -1,0 +1,5 @@
+{
+  "scenario": "duplicate_submit",
+  "material_id": "M01",
+  "repeat": 2
+}

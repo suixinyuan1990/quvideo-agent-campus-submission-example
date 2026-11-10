@@ -1,0 +1,40 @@
+{
+  "run_status": "incomplete",
+  "outcome": "incomplete",
+  "material_id": "M10",
+  "review_status": "incomplete",
+  "risk_reasons": [],
+  "requested_slot": "10:00",
+  "requested_date": "2026-11-14",
+  "hard_requirement": true,
+  "suggested_slot": null,
+  "committed_slot": null,
+  "hard_requirement_changed": false,
+  "change_authorized": false,
+  "confirmation_status": null,
+  "pending_confirmations": [],
+  "draft_save_status": "not_saved",
+  "draft_id": null,
+  "saved_draft": null,
+  "publish_state": "not_published",
+  "save_error": null,
+  "tool_error": null,
+  "message": "已达到工具调用次数上限（2），任务未完成",
+  "incomplete_reason": "已达到工具调用次数上限（2），任务未完成",
+  "store_draft_count": 0,
+  "progress": {
+    "material_loaded": true,
+    "material_complete": true,
+    "rules_checked": true,
+    "rules_clear": true,
+    "slots_checked": false,
+    "save_called": false
+  },
+  "limits": {
+    "max_steps": 8,
+    "max_tool_calls": 2,
+    "decision_count": 3,
+    "tool_calls_used": 2,
+    "hit_limit": true
+  }
+}

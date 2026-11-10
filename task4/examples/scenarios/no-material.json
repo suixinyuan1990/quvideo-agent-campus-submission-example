@@ -1,0 +1,48 @@
+{
+  "input": {
+    "theme": "运动鞋气垫",
+    "duration_sec": 30.0,
+    "audience": "功能介绍观众",
+    "platform": "抖音",
+    "style": "口播"
+  },
+  "result": {
+    "title": "",
+    "shots": [],
+    "estimated_duration_sec": null,
+    "source_ids": [],
+    "risks": [],
+    "status": "no_material",
+    "message": "改写查询后仍然没有命中素材。"
+  },
+  "trace": [
+    {
+      "action": "search",
+      "arguments": {
+        "query": "运动鞋气垫"
+      },
+      "attempt": 1,
+      "ok": true,
+      "observation": []
+    },
+    {
+      "action": "search",
+      "arguments": {
+        "query": "运动鞋"
+      },
+      "attempt": 1,
+      "ok": true,
+      "observation": []
+    },
+    {
+      "action": "finish",
+      "arguments": {
+        "action": "finish",
+        "status": "no_material",
+        "message": "改写查询后仍然没有命中素材。"
+      },
+      "ok": true,
+      "observation": {}
+    }
+  ]
+}

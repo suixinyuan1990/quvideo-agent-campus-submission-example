@@ -1,0 +1,91 @@
+{
+  "run_status": "completed",
+  "outcome": "blocked_by_rule",
+  "material_id": "M03",
+  "max_steps": 8,
+  "max_tool_calls": 8,
+  "decision_count": 3,
+  "tool_calls_used": 2,
+  "hit_limit": false,
+  "incomplete_reason": null,
+  "stopped": null,
+  "final_decision": {
+    "action": "finish",
+    "arguments": null,
+    "decision_basis": "观察结果含阻断级规则风险，阻断排期。"
+  },
+  "steps": [
+    {
+      "step": 1,
+      "tool": "read_material",
+      "arguments": {
+        "material_id": "M03",
+        "refresh": false
+      },
+      "decision_basis": "还没有素材观察结果，先读取素材元数据和发布时间要求。",
+      "result_summary": "素材齐全，发布时间 09:00（2026-11-17），硬性要求=是",
+      "result": {
+        "ok": true,
+        "summary": "素材齐全，发布时间 09:00（2026-11-17），硬性要求=是",
+        "material": {
+          "id": "M03",
+          "title": "稳赚理财推荐",
+          "body": "保证收益，零风险，立刻下单。",
+          "channel": "app_banner",
+          "audience": "all",
+          "requested_slot": "09:00",
+          "date": "2026-11-17",
+          "hard_requirement": true,
+          "content_revision": "r3",
+          "queue_status": "pending"
+        },
+        "missing_fields": [],
+        "complete": true,
+        "refreshed": false
+      },
+      "next_action": "check_rules",
+      "next_arguments": {
+        "material_id": "M03"
+      },
+      "next_decision_basis": "素材字段已经齐全，下一步检查审核规则。"
+    },
+    {
+      "step": 2,
+      "tool": "check_rules",
+      "arguments": {
+        "material_id": "M03"
+      },
+      "decision_basis": "素材字段已经齐全，下一步检查审核规则。",
+      "result_summary": "规则阻断：承诺收益（保证收益）、绝对化承诺（零风险）、诱导立即交易（立刻下单）",
+      "result": {
+        "ok": true,
+        "summary": "规则阻断：承诺收益（保证收益）、绝对化承诺（零风险）、诱导立即交易（立刻下单）",
+        "material_id": "M03",
+        "risks": [
+          {
+            "code": "guaranteed_return",
+            "severity": "block",
+            "reason": "承诺收益",
+            "evidence": "保证收益"
+          },
+          {
+            "code": "zero_risk",
+            "severity": "block",
+            "reason": "绝对化承诺",
+            "evidence": "零风险"
+          },
+          {
+            "code": "pressure_order",
+            "severity": "block",
+            "reason": "诱导立即交易",
+            "evidence": "立刻下单"
+          }
+        ],
+        "blocking": true
+      },
+      "next_action": "finish",
+      "next_arguments": null,
+      "next_decision_basis": "观察结果含阻断级规则风险，阻断排期。"
+    }
+  ]
+}

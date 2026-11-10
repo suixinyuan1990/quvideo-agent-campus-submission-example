@@ -1,0 +1,60 @@
+{
+  "case_id": "missing_info",
+  "decision_source": "local_policy",
+  "events": [
+    {
+      "seq": 1,
+      "type": "decision",
+      "action": "stop",
+      "rule": "R4",
+      "reason": "缺少预算，不补造缺失字段，方案未保存。",
+      "missing_fields": [
+        "预算"
+      ]
+    },
+    {
+      "seq": 2,
+      "type": "tool",
+      "tool": "material_search",
+      "title": "素材检索",
+      "status": "not_run",
+      "plan_id": null,
+      "request": null,
+      "result": null,
+      "reason": "缺少预算，不补造缺失字段，方案未保存。"
+    },
+    {
+      "seq": 3,
+      "type": "tool",
+      "tool": "script_generate",
+      "title": "脚本生成",
+      "status": "not_run",
+      "plan_id": null,
+      "request": null,
+      "result": null,
+      "reason": "缺少预算，不补造缺失字段，方案未保存。"
+    },
+    {
+      "seq": 4,
+      "type": "tool",
+      "tool": "cost_estimate",
+      "title": "成本估算",
+      "status": "not_run",
+      "plan_id": null,
+      "request": null,
+      "result": null,
+      "reason": "缺少预算，不补造缺失字段，方案未保存。"
+    },
+    {
+      "seq": 5,
+      "type": "tool",
+      "tool": "plan_save",
+      "title": "方案保存",
+      "status": "not_run",
+      "plan_id": null,
+      "request": null,
+      "result": null,
+      "reason": "缺少预算，不补造缺失字段，方案未保存。"
+    }
+  ]
+}

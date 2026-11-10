@@ -1,0 +1,11 @@
+{
+  "case_id": "resume_failed",
+  "note": "第一次脚本生成失败。第二次从失败步骤继续，素材检索不重跑，费用不重复计算。",
+  "theme": "脚本失败后续跑",
+  "budget": 10,
+  "deadline": "2026-11-20",
+  "as_of": "2026-11-10T09:00:00",
+  "plan_set": "resume_once",
+  "resume": true,
+  "runs": 2
+}

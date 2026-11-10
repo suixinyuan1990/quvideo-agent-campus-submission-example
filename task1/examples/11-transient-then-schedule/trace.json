@@ -1,0 +1,174 @@
+{
+  "run_status": "completed",
+  "outcome": "scheduled_draft",
+  "material_id": "M12",
+  "max_steps": 8,
+  "max_tool_calls": 8,
+  "decision_count": 6,
+  "tool_calls_used": 5,
+  "hit_limit": false,
+  "incomplete_reason": null,
+  "stopped": null,
+  "final_decision": {
+    "action": "finish",
+    "arguments": null,
+    "decision_basis": "草稿已保存。结束。"
+  },
+  "steps": [
+    {
+      "step": 1,
+      "tool": "read_material",
+      "arguments": {
+        "material_id": "M12",
+        "refresh": false
+      },
+      "decision_basis": "还没有素材观察结果，先读取素材元数据和发布时间要求。",
+      "result_summary": "素材齐全，发布时间 13:00（2026-11-18），硬性要求=是",
+      "result": {
+        "ok": true,
+        "summary": "素材齐全，发布时间 13:00（2026-11-18），硬性要求=是",
+        "material": {
+          "id": "M12",
+          "title": "图书角开放时间",
+          "body": "周三中午图书角开放，可在前台登记借阅。",
+          "channel": "intranet",
+          "audience": "staff",
+          "requested_slot": "13:00",
+          "date": "2026-11-18",
+          "hard_requirement": true,
+          "content_revision": "r1",
+          "queue_status": "pending"
+        },
+        "missing_fields": [],
+        "complete": true,
+        "refreshed": false
+      },
+      "next_action": "check_rules",
+      "next_arguments": {
+        "material_id": "M12"
+      },
+      "next_decision_basis": "素材字段已经齐全，下一步检查审核规则。"
+    },
+    {
+      "step": 2,
+      "tool": "check_rules",
+      "arguments": {
+        "material_id": "M12"
+      },
+      "decision_basis": "素材字段已经齐全，下一步检查审核规则。",
+      "result_summary": "规则服务超时",
+      "result": {
+        "ok": false,
+        "error": "rule_service_timeout",
+        "retryable": true,
+        "summary": "规则服务超时",
+        "created": false,
+        "duplicate": false,
+        "risks": null,
+        "blocking": null
+      },
+      "next_action": "check_rules",
+      "next_arguments": {
+        "material_id": "M12"
+      },
+      "next_decision_basis": "规则工具临时失败，决定补查一次；没有可靠规则结果之前不排期。"
+    },
+    {
+      "step": 3,
+      "tool": "check_rules",
+      "arguments": {
+        "material_id": "M12"
+      },
+      "decision_basis": "规则工具临时失败，决定补查一次；没有可靠规则结果之前不排期。",
+      "result_summary": "规则检查通过，无风险",
+      "result": {
+        "ok": true,
+        "summary": "规则检查通过，无风险",
+        "material_id": "M12",
+        "risks": [],
+        "blocking": false
+      },
+      "next_action": "query_slots",
+      "next_arguments": {
+        "date": "2026-11-18",
+        "slot": "13:00",
+        "material_id": "M12"
+      },
+      "next_decision_basis": "规则检查通过，查询要求的发布时间是否可用。"
+    },
+    {
+      "step": 4,
+      "tool": "query_slots",
+      "arguments": {
+        "date": "2026-11-18",
+        "slot": "13:00",
+        "material_id": "M12"
+      },
+      "decision_basis": "规则检查通过，查询要求的发布时间是否可用。",
+      "result_summary": "13:00 可用",
+      "result": {
+        "ok": true,
+        "summary": "13:00 可用",
+        "date": "2026-11-18",
+        "slot": "13:00",
+        "known": true,
+        "preferred_free": true,
+        "occupied_by": null,
+        "alternative": null,
+        "free_slots": [
+          "13:00"
+        ],
+        "occupied_slots": []
+      },
+      "next_action": "save_draft",
+      "next_arguments": {
+        "material_id": "M12",
+        "suggested_slot": "13:00",
+        "commit": true,
+        "confirmed_slot": null
+      },
+      "next_decision_basis": "要求的时段可用，按该时段保存草稿。"
+    },
+    {
+      "step": 5,
+      "tool": "save_draft",
+      "arguments": {
+        "material_id": "M12",
+        "suggested_slot": "13:00",
+        "commit": true,
+        "confirmed_slot": null
+      },
+      "decision_basis": "要求的时段可用，按该时段保存草稿。",
+      "result_summary": "已新建草稿 D-54fd0a7e4244，未发布",
+      "result": {
+        "ok": true,
+        "created": true,
+        "duplicate": false,
+        "summary": "已新建草稿 D-54fd0a7e4244，未发布",
+        "draft_id": "D-54fd0a7e4244",
+        "draft": {
+          "draft_id": "D-54fd0a7e4244",
+          "material_id": "M12",
+          "content_revision": "r1",
+          "date": "2026-11-18",
+          "requested_slot": "13:00",
+          "suggested_slot": "13:00",
+          "committed_slot": "13:00",
+          "hard_requirement": true,
+          "hard_requirement_changed": false,
+          "change_authorized": false,
+          "confirmation_status": "not_required",
+          "review_status": "ready_draft",
+          "risk_reasons": [],
+          "publish_state": "not_published"
+        },
+        "publish_state": "not_published",
+        "confirmation_status": "not_required",
+        "store_draft_count": 1
+      },
+      "next_action": "finish",
+      "next_arguments": null,
+      "next_decision_basis": "草稿已保存。结束。"
+    }
+  ]
+}

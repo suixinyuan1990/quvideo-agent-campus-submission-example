@@ -1,0 +1,20 @@
+{
+  "dataset": "shibing624/AdvertiseGen",
+  "source_url": "https://huggingface.co/datasets/shibing624/AdvertiseGen",
+  "documents": 115669,
+  "single_attribute_documents": 185,
+  "summaries_with_number_absent_from_body": 521,
+  "summaries_with_unk": 36342,
+  "files": {
+    "train.json": {
+      "sha256": "29f242f077fe14ba03fcb7c46f942d53fbc1a30fea89bf9c5bfc41e39f073877",
+      "bytes": 53763280,
+      "rows": 114599
+    },
+    "dev.json": {
+      "sha256": "96b63cfd9fd0faca122a5747597f46ff835f19d9b1d3634f4b71f8a5f9487cc1",
+      "bytes": 498394,
+      "rows": 1070
+    }
+  }
+}

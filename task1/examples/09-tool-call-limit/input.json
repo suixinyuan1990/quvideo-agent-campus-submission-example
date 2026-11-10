@@ -1,0 +1,5 @@
+{
+  "scenario": "tool_call_limit",
+  "material_id": "M10",
+  "max_tool_calls": 2
+}

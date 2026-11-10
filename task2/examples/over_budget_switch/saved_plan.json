@@ -1,0 +1,31 @@
+{
+  "plan_id": "alternative",
+  "name": "替代方案",
+  "theme": "春季新品上新",
+  "materials": [
+    {
+      "id": "m-lite",
+      "title": "单张主视觉",
+      "cost": 4
+    }
+  ],
+  "script": {
+    "title": "精简上新脚本",
+    "summary": "用单张主视觉说明春季新品的卖点和上市时间。",
+    "cost": 4
+  },
+  "estimate": 8,
+  "duration_hours": 8,
+  "budget": 10,
+  "deadline": "2026-11-20",
+  "unit": "模拟单位",
+  "rejected_plans": [
+    {
+      "plan_id": "initial",
+      "name": "初始方案",
+      "estimate": 12,
+      "over_by": 2,
+      "within_deadline": true
+    }
+  ]
+}

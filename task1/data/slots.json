@@ -1,0 +1,24 @@
+{
+  "2026-11-12": {
+    "18:00": {"occupied": true, "occupied_by": "SCH-1800"},
+    "19:00": {"occupied": false, "occupied_by": null}
+  },
+  "2026-11-13": {
+    "12:00": {"occupied": false, "occupied_by": null}
+  },
+  "2026-11-14": {
+    "10:00": {"occupied": false, "occupied_by": null}
+  },
+  "2026-11-15": {
+    "15:00": {"occupied": false, "occupied_by": null}
+  },
+  "2026-11-16": {
+    "11:00": {"occupied": false, "occupied_by": null}
+  },
+  "2026-11-17": {
+    "09:00": {"occupied": false, "occupied_by": null}
+  },
+  "2026-11-18": {
+    "13:00": {"occupied": false, "occupied_by": null}
+  }
+}

@@ -1,0 +1,115 @@
+{
+  "input": {
+    "question": "年假能不能结转到下一年？",
+    "history": []
+  },
+  "output": {
+    "answer": "现有资料不能回答该问题。",
+    "citations": [],
+    "gaps": [
+      "缺少与该问题相关的制度或产品资料。"
+    ],
+    "status": "insufficient_evidence"
+  },
+  "trace": [
+    {
+      "action": "search",
+      "arguments": {
+        "query": "年假能不能结转到下一年？"
+      },
+      "output": {
+        "ok": true,
+        "tool": "search",
+        "candidates": [
+          {
+            "doc_id": "POL-LEAVE-001",
+            "version_date": "2024-03-01",
+            "doc_type": "policy",
+            "scope": null,
+            "priority": null,
+            "excerpt": "年假制度。入职满一年的员工每年享有 10 天带薪年假。申请年假需提前三个工作日提交。试用期员工不适用本条。",
+            "excerpt_complete": true,
+            "paths": [
+              "bm25"
+            ],
+            "rank": 1
+          },
+          {
+            "doc_id": "POL-LEAVE-PROB",
+            "version_date": "2024-03-01",
+            "doc_type": "policy",
+            "scope": "试用期员工",
+            "priority": null,
+            "excerpt": "试用期年假。试用期员工的年假按在职月数折算，每满一个月可享有 0.5 天。该规定只适用于试用期员工。",
+            "excerpt_complete": true,
+            "paths": [
+              "bm25"
+            ],
+            "rank": 2
+          }
+        ],
+        "path_ranks": {
+          "bm25": [
+            "POL-LEAVE-001",
+            "POL-LEAVE-PROB"
+          ],
+          "phrase": [],
+          "ngram": []
+        }
+      }
+    },
+    {
+      "action": "read",
+      "arguments": {
+        "doc_id": "POL-LEAVE-001"
+      },
+      "output": {
+        "ok": true,
+        "tool": "read",
+        "found": true,
+        "doc_id": "POL-LEAVE-001",
+        "version_date": "2024-03-01",
+        "doc_type": "policy",
+        "scope": null,
+        "priority": null,
+        "text": "年假制度。入职满一年的员工每年享有 10 天带薪年假。申请年假需提前三个工作日提交。试用期员工不适用本条。",
+        "truncated": false
+      }
+    },
+    {
+      "action": "read",
+      "arguments": {
+        "doc_id": "POL-LEAVE-PROB"
+      },
+      "output": {
+        "ok": true,
+        "tool": "read",
+        "found": true,
+        "doc_id": "POL-LEAVE-PROB",
+        "version_date": "2024-03-01",
+        "doc_type": "policy",
+        "scope": "试用期员工",
+        "priority": null,
+        "text": "试用期年假。试用期员工的年假按在职月数折算，每满一个月可享有 0.5 天。该规定只适用于试用期员工。",
+        "truncated": false
+      }
+    },
+    {
+      "action": "finish",
+      "arguments": {
+        "reason": "证据已足够"
+      },
+      "output": {
+        "answer": {
+          "answer": "现有资料不能回答该问题。",
+          "citations": [],
+          "gaps": [
+            "缺少与该问题相关的制度或产品资料。"
+          ],
+          "status": "insufficient_evidence"
+        },
+        "errors": []
+      }
+    }
+  ]
+}

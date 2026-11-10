@@ -1,0 +1,152 @@
+{
+  "score": {
+    "traceable": 50,
+    "correction": 50,
+    "total": 100
+  },
+  "critical_defects": [],
+  "alignment": {
+    "detailed_30": [],
+    "detailed_40": [],
+    "detailed_20": [],
+    "detailed_1": [],
+    "normal": [],
+    "numbers": [],
+    "blocked": [],
+    "empty": [],
+    "wiped": [],
+    "renamed": []
+  },
+  "fabrication": {
+    "detailed_30": [],
+    "detailed_40": [],
+    "normal": [],
+    "numbers": [],
+    "renamed": []
+  },
+  "duration_change": {
+    "at_30": {
+      "status": "completed",
+      "actions": [
+        "search",
+        "draft",
+        "estimate",
+        "check_rules",
+        "draft",
+        "estimate",
+        "check_rules",
+        "finish"
+      ],
+      "next_after_first_check": "draft",
+      "estimated_duration_sec": 28.0,
+      "source_ids": [
+        "P01"
+      ],
+      "shot_duration_sec": [
+        28.0
+      ]
+    },
+    "at_40": {
+      "status": "completed",
+      "actions": [
+        "search",
+        "draft",
+        "estimate",
+        "check_rules",
+        "finish"
+      ],
+      "next_after_first_check": "finish",
+      "estimated_duration_sec": 38.0,
+      "source_ids": [
+        "P01"
+      ]
+    },
+    "at_20": {
+      "status": "completed",
+      "actions": [
+        "search",
+        "draft",
+        "estimate",
+        "check_rules",
+        "draft",
+        "estimate",
+        "check_rules",
+        "draft",
+        "estimate",
+        "check_rules",
+        "finish"
+      ],
+      "next_after_first_check": "draft",
+      "estimated_duration_sec": 2.0,
+      "source_ids": [
+        "P01"
+      ],
+      "shot_duration_sec": [
+        2.0
+      ],
+      "narration": "这个功能支持字幕"
+    },
+    "at_1": {
+      "status": "unsatisfied",
+      "actions": [
+        "search",
+        "draft",
+        "estimate",
+        "check_rules",
+        "draft",
+        "estimate",
+        "check_rules",
+        "draft",
+        "estimate",
+        "check_rules",
+        "finish"
+      ],
+      "estimated_duration_sec": 2.0,
+      "source_ids": [
+        "P01"
+      ],
+      "narration": "这个功能支持字幕"
+    }
+  },
+  "search_change": {
+    "original_next_after_search": "draft",
+    "original_actions": [
+      "search",
+      "draft",
+      "estimate",
+      "check_rules",
+      "finish"
+    ],
+    "original_title": "支持字幕",
+    "wiped_next_after_search": "search",
+    "wiped_actions": [
+      "search",
+      "search",
+      "finish"
+    ],
+    "wiped_status": "no_material",
+    "renamed_title": "字幕翻译",
+    "renamed_narration": "这个功能字幕翻译",
+    "renamed_actions": [
+      "search",
+      "draft",
+      "estimate",
+      "check_rules",
+      "finish"
+    ],
+    "renamed_source_ids": [
+      "P01"
+    ]
+  },
+  "number_correction": {
+    "first_check_passed": false,
+    "first_violation_ids": [
+      "FACT-NUMBER"
+    ],
+    "final_status": "completed",
+    "final_narration": "这个功能支持字幕",
+    "final_source_ids": [
+      "P01"
+    ]
+  }
+}

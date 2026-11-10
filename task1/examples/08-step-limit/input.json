@@ -1,0 +1,5 @@
+{
+  "scenario": "step_limit",
+  "material_id": "M10",
+  "max_steps": 2
+}

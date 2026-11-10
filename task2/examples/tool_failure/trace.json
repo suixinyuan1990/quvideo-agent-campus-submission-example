@@ -1,0 +1,93 @@
+{
+  "case_id": "tool_failure",
+  "decision_source": "local_policy",
+  "events": [
+    {
+      "seq": 1,
+      "type": "plan_init",
+      "decision_source": "local_policy",
+      "budget": 10,
+      "deadline": "2026-11-20",
+      "available_hours": 254,
+      "plan_ids": [
+        "initial"
+      ]
+    },
+    {
+      "seq": 2,
+      "type": "tool",
+      "tool": "material_search",
+      "title": "素材检索",
+      "status": "success",
+      "plan_id": null,
+      "request": {
+        "theme": "春季新品上新"
+      },
+      "result": {
+        "ok": true,
+        "count": 1,
+        "materials": [
+          {
+            "id": "m-lite",
+            "title": "单张主视觉",
+            "cost": 5
+          }
+        ]
+      },
+      "reason": null
+    },
+    {
+      "seq": 3,
+      "type": "tool",
+      "tool": "script_generate",
+      "title": "生成初始方案脚本",
+      "status": "failed",
+      "plan_id": "initial",
+      "request": {
+        "plan_id": "initial",
+        "theme": "春季新品上新",
+        "material_ids": [
+          "m-lite"
+        ],
+        "source": "material_search"
+      },
+      "result": {
+        "ok": false,
+        "error": "TOOL_ERROR",
+        "message": "脚本生成失败"
+      },
+      "reason": null
+    },
+    {
+      "seq": 4,
+      "type": "decision",
+      "action": "stop",
+      "rule": "R3",
+      "reason": "脚本生成失败。失败步骤保持 failed，方案未保存。",
+      "failed_tool": "script_generate",
+      "plan_id": "initial"
+    },
+    {
+      "seq": 5,
+      "type": "tool",
+      "tool": "cost_estimate",
+      "title": "成本估算",
+      "status": "not_run",
+      "plan_id": null,
+      "request": null,
+      "result": null,
+      "reason": "脚本生成失败。失败步骤保持 failed，方案未保存。"
+    },
+    {
+      "seq": 6,
+      "type": "tool",
+      "tool": "plan_save",
+      "title": "方案保存",
+      "status": "not_run",
+      "plan_id": null,
+      "request": null,
+      "result": null,
+      "reason": "脚本生成失败。失败步骤保持 failed，方案未保存。"
+    }
+  ]
+}

@@ -1,0 +1,9 @@
+{
+  "case_id": "insufficient_materials",
+  "note": "没有可用素材。返回未完成，不把后续步骤记为成功。",
+  "theme": "未建档活动",
+  "budget": 10,
+  "deadline": "2026-11-20",
+  "as_of": "2026-11-10T09:00:00",
+  "plan_set": "insufficient_materials"
+}

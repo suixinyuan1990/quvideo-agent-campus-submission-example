@@ -1,0 +1,130 @@
+{
+  "baseline": {
+    "clear": {
+      "status": "answered",
+      "answer": "根据 POL-LEAVE-001，入职满一年的员工每年享有 10 天带薪年假。",
+      "actions": [
+        "search",
+        "finish"
+      ],
+      "verbatim": true,
+      "supported": true
+    },
+    "paraphrase": {
+      "status": "answered",
+      "answer": "根据 POL-LEAVE-001，入职满一年的员工每年享有 10 天带薪年假。",
+      "actions": [
+        "search",
+        "finish"
+      ],
+      "verbatim": true,
+      "supported": true
+    },
+    "conflict": {
+      "status": "conflict",
+      "answer": "检索到的文档互相冲突，不能确定唯一答案。\nPOL-EXP-D01：报销期限为 30 天。\nPOL-EXP-D02：报销期限为 15 天。\nPOL-EXP-D02 的版本日期较晚，但版本日期不能单独作为采用依据。\n请确认适用哪一份文档。",
+      "actions": [
+        "search",
+        "read",
+        "read",
+        "finish"
+      ],
+      "verbatim": true,
+      "supported": true
+    },
+    "outside": {
+      "status": "insufficient_evidence",
+      "answer": "现有资料不能回答该问题。",
+      "actions": [
+        "search",
+        "finish"
+      ],
+      "verbatim": true,
+      "supported": true
+    },
+    "follow_up": {
+      "status": "answered",
+      "answer": "根据 POL-LEAVE-PROB，试用期员工的年假按在职月数折算，每满一个月可享有 0.5 天。",
+      "actions": [
+        "search",
+        "read",
+        "read",
+        "finish"
+      ],
+      "verbatim": true,
+      "supported": true
+    },
+    "tool_failure": {
+      "status": "tool_failure",
+      "answer": "片段读取工具失败，本次未能完成核实。这表示工具没有成功返回结果，不是资料库中没有相关内容。",
+      "actions": [
+        "search",
+        "read",
+        "read"
+      ],
+      "verbatim": true,
+      "supported": true
+    }
+  },
+  "replacement": {
+    "ten_to_twelve": {
+      "answer_changed": true,
+      "actions_changed": false,
+      "answer": "根据 POL-LEAVE-001，入职满一年的员工每年享有 12 天带薪年假。",
+      "actions": [
+        "search",
+        "finish"
+      ],
+      "supported": true
+    },
+    "remove_annual_leave_rule": {
+      "answer_changed": true,
+      "actions_changed": false,
+      "status": "insufficient_evidence",
+      "answer": "现有资料不能回答该问题。",
+      "actions": [
+        "search",
+        "finish"
+      ]
+    },
+    "align_reimbursement": {
+      "answer_changed": true,
+      "actions_changed": false,
+      "status": "answered",
+      "answer": "根据 POL-EXP-D01，报销期限为 20 天。",
+      "actions": [
+        "search",
+        "read",
+        "read",
+        "finish"
+      ]
+    },
+    "remove_d01": {
+      "answer_changed": true,
+      "actions_changed": true,
+      "status": "answered",
+      "answer": "根据 POL-EXP-D02，报销期限为 15 天。",
+      "actions": [
+        "search",
+        "finish"
+      ],
+      "supported": true
+    }
+  },
+  "retrieval": {
+    "bm25": [
+      "POL-LEAVE-001",
+      "POL-LEAVE-PROB"
+    ],
+    "fused": [
+      "POL-LEAVE-001"
+    ],
+    "conflict_fused": [
+      "POL-EXP-D01",
+      "POL-EXP-D02"
+    ],
+    "precision_improved": true,
+    "conflict_pair_kept": true
+  },
+  "critical_defects": []
+}

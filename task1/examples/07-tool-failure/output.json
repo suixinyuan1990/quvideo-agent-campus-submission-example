@@ -1,0 +1,42 @@
+{
+  "run_status": "completed",
+  "outcome": "tool_failure",
+  "material_id": "M11",
+  "review_status": "blocked_tool_failure",
+  "risk_reasons": [],
+  "requested_slot": "11:00",
+  "requested_date": "2026-11-16",
+  "hard_requirement": true,
+  "suggested_slot": null,
+  "committed_slot": null,
+  "hard_requirement_changed": false,
+  "change_authorized": false,
+  "confirmation_status": null,
+  "pending_confirmations": [
+    "没有可靠的规则结果，已停止排期。"
+  ],
+  "draft_save_status": "not_saved",
+  "draft_id": null,
+  "saved_draft": null,
+  "publish_state": "not_published",
+  "save_error": null,
+  "tool_error": "rule_service_timeout",
+  "message": "规则检查失败，没有可靠的风险结论，已停止排期，未保存草稿，未发布。",
+  "incomplete_reason": null,
+  "store_draft_count": 0,
+  "progress": {
+    "material_loaded": true,
+    "material_complete": true,
+    "rules_checked": false,
+    "rules_clear": false,
+    "slots_checked": false,
+    "save_called": false
+  },
+  "limits": {
+    "max_steps": 8,
+    "max_tool_calls": 8,
+    "decision_count": 4,
+    "tool_calls_used": 3,
+    "hit_limit": false
+  }
+}

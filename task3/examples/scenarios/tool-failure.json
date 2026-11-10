@@ -1,0 +1,100 @@
+{
+  "input": {
+    "question": "报销期限多久？",
+    "history": []
+  },
+  "output": {
+    "answer": "片段读取工具失败，本次未能完成核实。这表示工具没有成功返回结果，不是资料库中没有相关内容。",
+    "citations": [
+      {
+        "doc_id": "POL-EXP-D01",
+        "version_date": "2023-06-01",
+        "excerpt": "报销期限。报销期限为 30 天。费用发生后 30 天内提交报销申请。逾期申请不予受理。"
+      },
+      {
+        "doc_id": "POL-EXP-D02",
+        "version_date": "2024-01-15",
+        "excerpt": "报销期限。报销期限为 15 天。费用发生后 15 天内提交报销申请。逾期申请不予受理。"
+      }
+    ],
+    "gaps": [
+      "片段读取失败，相关内容未能完成核实。"
+    ],
+    "status": "tool_failure"
+  },
+  "trace": [
+    {
+      "action": "search",
+      "arguments": {
+        "query": "报销期限多久？"
+      },
+      "output": {
+        "ok": true,
+        "tool": "search",
+        "candidates": [
+          {
+            "doc_id": "POL-EXP-D01",
+            "version_date": "2023-06-01",
+            "doc_type": "policy",
+            "scope": null,
+            "priority": null,
+            "excerpt": "报销期限。报销期限为 30 天。费用发生后 30 天内提交报销申请。逾期申请不予受理。",
+            "excerpt_complete": true,
+            "paths": [
+              "bm25",
+              "ngram"
+            ],
+            "rank": 1
+          },
+          {
+            "doc_id": "POL-EXP-D02",
+            "version_date": "2024-01-15",
+            "doc_type": "policy",
+            "scope": null,
+            "priority": null,
+            "excerpt": "报销期限。报销期限为 15 天。费用发生后 15 天内提交报销申请。逾期申请不予受理。",
+            "excerpt_complete": true,
+            "paths": [
+              "bm25",
+              "ngram"
+            ],
+            "rank": 2
+          }
+        ],
+        "path_ranks": {
+          "bm25": [
+            "POL-EXP-D01",
+            "POL-EXP-D02"
+          ],
+          "phrase": [],
+          "ngram": [
+            "POL-EXP-D01",
+            "POL-EXP-D02"
+          ]
+        }
+      }
+    },
+    {
+      "action": "read",
+      "arguments": {
+        "doc_id": "POL-EXP-D01"
+      },
+      "output": {
+        "ok": false,
+        "tool": "read",
+        "error": "read failed"
+      }
+    },
+    {
+      "action": "read",
+      "arguments": {
+        "doc_id": "POL-EXP-D01"
+      },
+      "output": {
+        "ok": false,
+        "tool": "read",
+        "error": "read failed"
+      }
+    }
+  ]
+}

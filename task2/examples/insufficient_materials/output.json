@@ -1,0 +1,111 @@
+{
+  "case_id": "insufficient_materials",
+  "note": "没有可用素材。返回未完成，不把后续步骤记为成功。",
+  "theme": "未建档活动",
+  "budget": 10,
+  "deadline": "2026-11-20",
+  "unit": "模拟单位",
+  "completed": false,
+  "reused": false,
+  "task_plan": [
+    {
+      "id": "s1",
+      "tool": "material_search",
+      "title": "素材检索",
+      "plan_id": null
+    },
+    {
+      "id": "s2",
+      "tool": "script_generate",
+      "title": "脚本生成",
+      "plan_id": null
+    },
+    {
+      "id": "s3",
+      "tool": "cost_estimate",
+      "title": "成本估算",
+      "plan_id": null
+    },
+    {
+      "id": "s4",
+      "tool": "plan_save",
+      "title": "方案保存",
+      "plan_id": null
+    }
+  ],
+  "step_status": [
+    {
+      "id": "s1",
+      "tool": "material_search",
+      "title": "素材检索",
+      "plan_id": null,
+      "status": "success",
+      "reason": null,
+      "prior_status": null,
+      "executed_this_run": true
+    },
+    {
+      "id": "s2",
+      "tool": "script_generate",
+      "title": "脚本生成",
+      "plan_id": null,
+      "status": "not_run",
+      "reason": "无可用素材，方案未保存。",
+      "prior_status": null,
+      "executed_this_run": false
+    },
+    {
+      "id": "s3",
+      "tool": "cost_estimate",
+      "title": "成本估算",
+      "plan_id": null,
+      "status": "not_run",
+      "reason": "无可用素材，方案未保存。",
+      "prior_status": null,
+      "executed_this_run": false
+    },
+    {
+      "id": "s4",
+      "tool": "plan_save",
+      "title": "方案保存",
+      "plan_id": null,
+      "status": "not_run",
+      "reason": "无可用素材，方案未保存。",
+      "prior_status": null,
+      "executed_this_run": false
+    }
+  ],
+  "tool_results": [
+    {
+      "id": "s1",
+      "tool": "material_search",
+      "plan_id": null,
+      "status": "success",
+      "result": {
+        "ok": true,
+        "count": 0,
+        "materials": []
+      },
+      "retained_result": null,
+      "source": null
+    }
+  ],
+  "decisions": [
+    {
+      "seq": 3,
+      "type": "decision",
+      "action": "stop",
+      "rule": "R5",
+      "reason": "无可用素材，方案未保存。",
+      "material_count": 0
+    }
+  ],
+  "total_cost": 0,
+  "incremental_cost": 0,
+  "saved_plan": null,
+  "incomplete_reason": "无可用素材，方案未保存。",
+  "gap": {
+    "missing": "materials"
+  },
+  "failed_steps_marked_success": false
+}

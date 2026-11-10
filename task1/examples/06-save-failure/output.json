@@ -1,0 +1,40 @@
+{
+  "run_status": "completed",
+  "outcome": "save_failed",
+  "material_id": "M04",
+  "review_status": "save_failed",
+  "risk_reasons": [],
+  "requested_slot": "15:00",
+  "requested_date": "2026-11-15",
+  "hard_requirement": true,
+  "suggested_slot": "15:00",
+  "committed_slot": null,
+  "hard_requirement_changed": false,
+  "change_authorized": false,
+  "confirmation_status": null,
+  "pending_confirmations": [],
+  "draft_save_status": "failed",
+  "draft_id": null,
+  "saved_draft": null,
+  "publish_state": "not_published",
+  "save_error": "storage_unavailable",
+  "tool_error": null,
+  "message": "草稿保存失败（storage_unavailable），未写入草稿，未发布。",
+  "incomplete_reason": null,
+  "store_draft_count": 0,
+  "progress": {
+    "material_loaded": true,
+    "material_complete": true,
+    "rules_checked": true,
+    "rules_clear": true,
+    "slots_checked": true,
+    "save_called": true
+  },
+  "limits": {
+    "max_steps": 8,
+    "max_tool_calls": 8,
+    "decision_count": 5,
+    "tool_calls_used": 4,
+    "hit_limit": false
+  }
+}

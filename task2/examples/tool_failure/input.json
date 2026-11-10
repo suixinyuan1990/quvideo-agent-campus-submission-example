@@ -1,0 +1,9 @@
+{
+  "case_id": "tool_failure",
+  "note": "脚本生成失败。失败步骤记为 failed，不记为 success。已成功的素材检索结果保留。",
+  "theme": "春季新品上新",
+  "budget": 10,
+  "deadline": "2026-11-20",
+  "as_of": "2026-11-10T09:00:00",
+  "plan_set": "tool_failure"
+}

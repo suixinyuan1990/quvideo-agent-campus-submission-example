@@ -1,0 +1,12 @@
+{
+  "dataset": "Salesforce/FaithEval-inconsistent-v1.0",
+  "source_url": "https://huggingface.co/datasets/Salesforce/FaithEval-inconsistent-v1.0",
+  "source_file": "test-00000-of-00001.parquet",
+  "source_sha256": "a4fd32a58c28267bc3b217a6006af68d95f354568f42702ba18d9b8c76fffa15",
+  "source_rows": 1500,
+  "documents": 3000,
+  "tasks": 3000,
+  "conflict_tasks": 1500,
+  "single_document_tasks": 1500,
+  "supported_answer_not_exact_substring": 207
+}

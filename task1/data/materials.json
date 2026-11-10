@@ -1,0 +1,86 @@
+{
+  "M01": {
+    "id": "M01",
+    "title": "春季会员日预告",
+    "body": "会员日全场九折，活动细则以页面为准。",
+    "channel": "app_push",
+    "audience": "members",
+    "requested_slot": "18:00",
+    "date": "2026-11-12",
+    "hard_requirement": true,
+    "content_revision": "r1",
+    "queue_status": "pending"
+  },
+  "M02": {
+    "id": "M02",
+    "title": "",
+    "body": null,
+    "channel": "wechat",
+    "audience": null,
+    "requested_slot": "12:00",
+    "date": "2026-11-13",
+    "hard_requirement": true,
+    "content_revision": "r1",
+    "queue_status": "pending"
+  },
+  "M03": {
+    "id": "M03",
+    "title": "稳赚理财推荐",
+    "body": "保证收益，零风险，立刻下单。",
+    "channel": "app_banner",
+    "audience": "all",
+    "requested_slot": "09:00",
+    "date": "2026-11-17",
+    "hard_requirement": true,
+    "content_revision": "r3",
+    "queue_status": "pending"
+  },
+  "M04": {
+    "id": "M04",
+    "title": "新品试穿预约",
+    "body": "新款已到店，可在周末预约试穿。",
+    "channel": "app_push",
+    "audience": "members",
+    "requested_slot": "15:00",
+    "date": "2026-11-15",
+    "hard_requirement": true,
+    "content_revision": "r2",
+    "queue_status": "pending"
+  },
+  "M10": {
+    "id": "M10",
+    "title": "门店周末营业提醒",
+    "body": "本周六日照常营业，欢迎到店了解养护服务。",
+    "channel": "wechat",
+    "audience": "followers",
+    "requested_slot": "10:00",
+    "date": "2026-11-14",
+    "hard_requirement": true,
+    "content_revision": "r1",
+    "queue_status": "pending"
+  },
+  "M11": {
+    "id": "M11",
+    "title": "工位绿植养护提示",
+    "body": "周三下午集中浇水，请勿把杯子放在花盆边缘。",
+    "channel": "email",
+    "audience": "staff",
+    "requested_slot": "11:00",
+    "date": "2026-11-16",
+    "hard_requirement": true,
+    "content_revision": "r1",
+    "queue_status": "pending"
+  },
+  "M12": {
+    "id": "M12",
+    "title": "图书角开放时间",
+    "body": "周三中午图书角开放，可在前台登记借阅。",
+    "channel": "intranet",
+    "audience": "staff",
+    "requested_slot": "13:00",
+    "date": "2026-11-18",
+    "hard_requirement": true,
+    "content_revision": "r1",
+    "queue_status": "pending"
+  }
+}

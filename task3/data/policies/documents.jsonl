@@ -1,0 +1,5 @@
+{"doc_id": "POL-LEAVE-001", "version_date": "2024-03-01", "doc_type": "policy", "scope": null, "priority": null, "body": "年假制度。入职满一年的员工每年享有 10 天带薪年假。申请年假需提前三个工作日提交。试用期员工不适用本条。"}
+{"doc_id": "POL-LEAVE-PROB", "version_date": "2024-03-01", "doc_type": "policy", "scope": "试用期员工", "priority": null, "body": "试用期年假。试用期员工的年假按在职月数折算，每满一个月可享有 0.5 天。该规定只适用于试用期员工。"}
+{"doc_id": "POL-EXP-D01", "version_date": "2023-06-01", "doc_type": "policy", "scope": null, "priority": null, "body": "报销期限。报销期限为 30 天。费用发生后 30 天内提交报销申请。逾期申请不予受理。"}
+{"doc_id": "POL-EXP-D02", "version_date": "2024-01-15", "doc_type": "policy", "scope": null, "priority": null, "body": "报销期限。报销期限为 15 天。费用发生后 15 天内提交报销申请。逾期申请不予受理。"}
+{"doc_id": "POL-MEET-001", "version_date": "2025-02-01", "doc_type": "faq", "scope": null, "priority": null, "body": "远程协作工具。远程协作工具的单次会议最长 90 分钟。超过时长后会议自动结束。"}
